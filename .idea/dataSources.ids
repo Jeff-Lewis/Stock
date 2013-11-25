@@ -2,7 +2,7 @@
 <component name="dataSourceStorage">
   <data-source source="LOCAL" name="Rails BreaksServer: development" product="SQLite" version="3.6.23.1" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="pure" uuid="27dc1eec-72e7-4ec9-a41c-c31f0f03d8fd">
     <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-    <jdbc-url>jdbc:sqlite:E:\Git\Breaks\BreaksServer\db\development.sqlite3</jdbc-url>
+    <jdbc-url>jdbc:sqlite:E:\Git\BreaksServer\db\development.sqlite3</jdbc-url>
     <libraries>
       <library>
         <url>file://$USER_HOME$/.RubyMine50/config/jdbc-drivers/xerial-sqlite-license.txt</url>
@@ -81,7 +81,7 @@
   </data-source>
   <data-source source="LOCAL" name="Rails BreaksServer: test" product="SQLite" version="3.7.6.3" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="e53f3e89-e1f1-47c5-a799-1a41fbd57142">
     <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-    <jdbc-url>jdbc:sqlite:E:\Git\Breaks\BreaksServer\db\test.sqlite3</jdbc-url>
+    <jdbc-url>jdbc:sqlite:E:\Git\BreaksServer\db\test.sqlite3</jdbc-url>
     <libraries>
       <library>
         <url>file://$USER_HOME$/.RubyMine50/config/jdbc-drivers/xerial-sqlite-license.txt</url>
@@ -91,5 +91,17 @@
       </library>
     </libraries>
     <schema name="" catalog=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails BreaksServer: production" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="59430627-5ddf-41c3-a841-b9a0bf7a7925">
+    <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+    <jdbc-url>jdbc:sqlite:E:\Git\BreaksServer\db\development.sqlite3</jdbc-url>
+    <libraries>
+      <library>
+        <url>file://$USER_HOME$/.RubyMine50/config/jdbc-drivers/xerial-sqlite-license.txt</url>
+      </library>
+      <library>
+        <url>file://$USER_HOME$/.RubyMine50/config/jdbc-drivers/sqlite-jdbc-3.7.6.3-20110609.081603-3.jar</url>
+      </library>
+    </libraries>
   </data-source>
 </component>

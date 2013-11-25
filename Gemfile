@@ -45,3 +45,5 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'seed_dump'
+
+gem 'dotenv-rails'
