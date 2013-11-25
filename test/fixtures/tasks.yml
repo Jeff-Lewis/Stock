@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  type: 
+  level: 
+  map_id: 
+  status: 
+
+two:
+  name: MyString
+  type: 
+  level: 
+  map_id: 
+  status: 

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @task.name %>
+</p>
+
+<p>
+  <b>Is_Multi:</b>
+  <%= @task.is_multi %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @task.level %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @task.category %>
+</p>
+
+<p>
+  <b>Map:</b>
+  <%= @task.map_id %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @task.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>

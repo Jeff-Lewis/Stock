@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  phoneID: 
+  age: 
+  interest: MyString
+  agility: 
+  strength: 
+  arithmatic: 
+  logic: 
+  literature: 
+  teamwork: 
+
+two:
+  name: MyString
+  phoneID: 
+  age: 
+  interest: MyString
+  agility: 
+  strength: 
+  arithmatic: 
+  logic: 
+  literature: 
+  teamwork: 
