@@ -13,6 +13,18 @@ BreaksServer::Application.routes.draw do
 
   resources :users
 
+  match 'getTasksByMapID/:id' => 'tasks#getTasksByMapID'
+  match 'finishTaskByTaskID/:id' => 'tasks#finishTaskByTaskID'
+
+  match 'positions/createOrUpdatePage/:id' => 'positions#createOrUpdatePage'
+  match 'getPositionsByMapID/:id' => 'positions#getPositionsByMapID'
+  match 'createOrUpdatePosition' => 'positions#createOrUpdate'
+
+  match 'createOrUpdateUser' => 'users#createOrUpdate'
+
+  match 'users/createOrUpdatePage/:id' => 'users#createOrUpdatePage'
+
+  match 'users/getUser/:id' => 'users#getUserByPhoneID'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

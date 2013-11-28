@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :age, :agility, :arithmatic, :interest, :literature, :logic, :name, :phoneID, :strength, :teamwork
+  attr_accessible :age, :agility, :arithmatic, :interest, :literature, :logic, :name, :phoneID, :strength, :teamwork, :email
 
   has_many :positions, dependent: :destroy
 

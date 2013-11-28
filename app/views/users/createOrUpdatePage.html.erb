@@ -1,0 +1,62 @@
+<h1>Editing user</h1>
+
+<%= form_for(@user, :url => "/createOrUpdateUser.xml") do |f| %>
+    <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :phoneID %><br />
+      <%= f.text_field :phoneID %>
+    </div>
+    <div class="field">
+      <%= f.label :age %><br />
+      <%= f.text_field :age %>
+    </div>
+    <div class="field">
+      <%= f.label :interest %><br />
+      <%= f.text_field :interest %>
+    </div>
+    <div class="field">
+      <%= f.label :agility %><br />
+      <%= f.text_field :agility %>
+    </div>
+    <div class="field">
+      <%= f.label :strength %><br />
+      <%= f.text_field :strength %>
+    </div>
+    <div class="field">
+      <%= f.label :arithmatic %><br />
+      <%= f.text_field :arithmatic %>
+    </div>
+    <div class="field">
+      <%= f.label :logic %><br />
+      <%= f.text_field :logic %>
+    </div>
+    <div class="field">
+      <%= f.label :literature %><br />
+      <%= f.text_field :literature %>
+    </div>
+    <div class="field">
+      <%= f.label :teamwork %><br />
+      <%= f.text_field :teamwork %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
+
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back', users_path %>

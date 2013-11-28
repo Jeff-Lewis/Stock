@@ -40,6 +40,24 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
   end
 
+  def getTasksByMapID
+    @tasks = Task.where('map_id = ? AND is_multi = 1 AND status < 1.0', params[:id])
+
+    respond_to do |format|
+      format.xml  { render xml: @tasks }
+    end
+  end
+
+  def finishTaskByTaskID
+    @task = Task.find_by_id(params[:id])
+    @task.status += 0.1
+    respond_to do |format|
+      if @task.save
+        format.xml { render xml: @task, status: :updated, location: @task }
+      end
+    end
+  end
+
   # POST /tasks
   # POST /tasks.json
   def create

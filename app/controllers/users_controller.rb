@@ -58,6 +58,62 @@ class UsersController < ApplicationController
     end
   end
 
+  def createOrUpdatePage
+    @user = User.find(params[:id])
+
+    respond_to do |format|
+      format.html # createOrUpdatePage.html.erb
+      format.json { render json: @user }
+      format.xml { render xml: @user }
+    end
+  end
+
+  def getUserByPhoneID
+    @user = User.find_by_phoneID params[:id]
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @user }
+      format.xml { render xml: @user }
+    end
+  end
+
+  # POST /createOrUpdate
+  # POST /createOrUpdate.xml
+  # POST /createOrUpdate.json
+  def createOrUpdate
+    user = User.new(params[:user])
+
+    old_user = User.find_by_phoneID user.phoneID
+
+    if old_user != nil
+      puts old_user
+      respond_to do |format|
+        if old_user.update_attributes(params[:user])
+          format.html { redirect_to old_user, notice: 'User was successfully updated.' }
+          format.json { render json: old_user, status: :updated, location: old_user }
+          format.xml { render xml: old_user, status: :updated, location: old_user }
+        else
+          format.html { render action: "new" }
+          format.json { render json: old_user.errors, status: :unprocessable_entity }
+          format.xml { render xml: old_user.errors, status: :unprocessable_entity }
+        end
+      end
+    else
+      respond_to do |format|
+        if user.save
+          format.html { redirect_to user, notice: 'User was successfully created.' }
+          format.json { render json: user, status: :created, location: user }
+          format.xml { render xml: user, status: :created, location: user }
+        else
+          format.html { render action: "new" }
+          format.json { render json: user.errors, status: :unprocessable_entity }
+          format.xml { render xml: user.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+  end
+
   # PUT /users/1
   # PUT /users/1.json
   def update

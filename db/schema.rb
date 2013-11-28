@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131125155127) do
+ActiveRecord::Schema.define(:version => 20131128160224) do
 
   create_table "maps", :force => true do |t|
     t.string   "name"
@@ -43,17 +43,17 @@ ActiveRecord::Schema.define(:version => 20131125155127) do
     t.integer  "is_multi"
     t.integer  "level"
     t.integer  "map_id"
-    t.integer  "status"
+    t.float    "status",     :default => 0.0
     t.integer  "x"
     t.integer  "y"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
     t.integer  "category",   :default => 0
   end
 
   create_table "users", :force => true do |t|
     t.string   "name"
-    t.integer  "phoneID"
+    t.string   "phoneID"
     t.integer  "age"
     t.string   "interest"
     t.integer  "agility"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20131125155127) do
     t.integer  "teamwork"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "email"
   end
 
 end
