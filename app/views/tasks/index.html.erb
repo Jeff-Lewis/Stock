@@ -8,6 +8,8 @@
     <th>Category</th>
     <th>Map</th>
     <th>Status</th>
+    <th>x</th>
+    <th>y</th>
     <th></th>
     <th></th>
     <th></th>
@@ -21,6 +23,8 @@
     <td><%= task.category %></td>
     <td><%= task.map_id %></td>
     <td><%= task.status %></td>
+    <td><%= task.x %></td>
+    <td><%= task.y %></td>
     <td><%= link_to 'Show', task %></td>
     <td><%= link_to 'Edit', edit_task_path(task) %></td>
     <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -30,6 +30,16 @@
   <%= @task.status %>
 </p>
 
+<p>
+  <b>x:</b>
+  <%= @task.x %>
+</p>
+
+<p>
+  <b>y:</b>
+  <%= @task.y %>
+</p>
+
 
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>
