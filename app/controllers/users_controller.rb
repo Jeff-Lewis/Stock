@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  protect_from_forgery :except => [:createOrUpdate, :getUserByPhoneID]
   # GET /users
   # GET /users.json
   def index
