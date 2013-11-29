@@ -64,8 +64,8 @@ class PositionsController < ApplicationController
       respond_to do |format|
         if pos.update_attributes(:x => params[:x], :y => params[:y])
           format.html { redirect_to pos, notice: 'position was successfully updated.' }
-          format.json { render json: pos, status: :updated, location: pos }
-          format.xml { render xml: pos, status: :updated, location: pos }
+          format.json { render json: pos}
+          format.xml { render xml: pos}
         else
           format.html { render action: "new" }
           format.json { render json: pos.errors, status: :unprocessable_entity }

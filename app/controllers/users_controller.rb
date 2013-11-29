@@ -92,8 +92,8 @@ class UsersController < ApplicationController
       respond_to do |format|
         if old_user.update_attributes(params[:user])
           format.html { redirect_to old_user, notice: 'User was successfully updated.' }
-          format.json { render json: old_user, status: :updated, location: old_user }
-          format.xml { render xml: old_user, status: :updated, location: old_user }
+          format.json { render json: old_user}
+          format.xml { render xml: old_user}
         else
           format.html { render action: "new" }
           format.json { render json: old_user.errors, status: :unprocessable_entity }
