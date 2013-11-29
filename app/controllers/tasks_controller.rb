@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  protect_from_forgery :except => [:finishTaskByTaskID, :getTasksByMapID]
   # GET /tasks
   # GET /tasks.json
   def index

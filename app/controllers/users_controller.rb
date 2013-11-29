@@ -88,7 +88,7 @@ class UsersController < ApplicationController
     old_user = User.find_by_phoneID user.phoneID
 
     if old_user != nil
-      puts old_user
+      puts old_user.name
       respond_to do |format|
         if old_user.update_attributes(params[:user])
           format.html { redirect_to old_user, notice: 'User was successfully updated.' }

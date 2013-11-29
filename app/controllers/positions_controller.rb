@@ -1,4 +1,5 @@
 class PositionsController < ApplicationController
+  protect_from_forgery :except => [:createOrUpdate, :getPositionsByMapID]
   # GET /positions
   # GET /positions.json
   def index
