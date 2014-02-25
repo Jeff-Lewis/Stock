@@ -1,0 +1,31 @@
+<h1>Listing erdates</h1>
+
+<table>
+  <tr>
+    <th>Stock</th>
+    <th>Datetime</th>
+    <th>Estimate</th>
+    <th>Value</th>
+    <th>Confcall</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @erdates.each do |erdate| %>
+  <tr>
+    <td><%= link_to erdate.stock.name, erdate.stock %></td>
+    <td><%= erdate.datetime %></td>
+    <td><%= erdate.estimate %></td>
+    <td><%= erdate.value %></td>
+    <td><%= erdate.confcall %></td>
+    <td><%= link_to 'Show', erdate %></td>
+    <td><%= link_to 'Edit', edit_erdate_path(erdate) %></td>
+    <td><%= link_to 'Destroy', erdate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Erdate', new_erdate_path %>

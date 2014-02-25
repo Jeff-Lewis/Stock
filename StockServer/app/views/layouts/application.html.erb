@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>StockServer</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="getting-started">
+  <h1>Links</h1>
+
+  <ol>
+    <li>
+      <%= link_to 'stocks', stocks_path %>
+    </li>
+    <li>
+      <%= link_to 'popularities', popularities_path %>
+    </li>
+    <li>
+      <%= link_to 'erdates', erdates_path %>
+    </li>
+  </ol>
+</div>
+<%= yield %>
+
+</body>
+</html>

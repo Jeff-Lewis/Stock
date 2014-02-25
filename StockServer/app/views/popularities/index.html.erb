@@ -1,0 +1,25 @@
+<h1>Listing popularities</h1>
+
+<table>
+  <tr>
+    <th>Stock</th>
+    <th>Total</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @popularities.each do |popularity| %>
+  <tr>
+    <td><%= link_to popularity.stock.name, popularity.stock %></td>
+    <td><%= popularity.total %></td>
+    <td><%= link_to 'Show', popularity %></td>
+    <td><%= link_to 'Edit', edit_popularity_path(popularity) %></td>
+    <td><%= link_to 'Destroy', popularity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Popularity', new_popularity_path %>

@@ -1,0 +1,2 @@
+module ErdatesHelper
+end

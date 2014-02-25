@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Stock:</b>
+  <%= @erdate.stock_id %>
+</p>
+
+<p>
+  <b>Datetime:</b>
+  <%= @erdate.datetime %>
+</p>
+
+<p>
+  <b>Estimate:</b>
+  <%= @erdate.estimate %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @erdate.value %>
+</p>
+
+<p>
+  <b>Confcall:</b>
+  <%= @erdate.confcall %>
+</p>
+
+
+<%= link_to 'Edit', edit_erdate_path(@erdate) %> |
+<%= link_to 'Back', erdates_path %>
