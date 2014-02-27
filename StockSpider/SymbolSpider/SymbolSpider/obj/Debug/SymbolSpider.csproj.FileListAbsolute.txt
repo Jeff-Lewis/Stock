@@ -1,0 +1,12 @@
+E:\Git\Stock\StockSpider\SymbolSpider\SymbolSpider\bin\Debug\SymbolSpider.exe.config
+E:\Git\Stock\StockSpider\SymbolSpider\SymbolSpider\bin\Debug\SymbolSpider.exe
+E:\Git\Stock\StockSpider\SymbolSpider\SymbolSpider\bin\Debug\SymbolSpider.pdb
+E:\Git\Stock\StockSpider\SymbolSpider\SymbolSpider\bin\Debug\MaasOne.dll
+E:\Git\Stock\StockSpider\SymbolSpider\SymbolSpider\bin\Debug\MaasOne.Yahoo.dll
+E:\Git\Stock\StockSpider\SymbolSpider\SymbolSpider\bin\Debug\MaasOne.xml
+E:\Git\Stock\StockSpider\SymbolSpider\SymbolSpider\bin\Debug\MaasOne.Yahoo.xml
+E:\Git\Stock\StockSpider\SymbolSpider\SymbolSpider\obj\Debug\SymbolSpider.csprojResolveAssemblyReference.cache
+E:\Git\Stock\StockSpider\SymbolSpider\SymbolSpider\obj\Debug\SymbolSpider.exe
+E:\Git\Stock\StockSpider\SymbolSpider\SymbolSpider\obj\Debug\SymbolSpider.pdb
+E:\Git\Stock\StockSpider\SymbolSpider\SymbolSpider\bin\Debug\MaasOne.pdb
+E:\Git\Stock\StockSpider\SymbolSpider\SymbolSpider\bin\Debug\MaasOne.Yahoo.pdb

@@ -8,6 +8,9 @@ StockServer::Application.routes.draw do
   resources :stocks
 
   root :to => 'stock#index'
+
+  match 'parse' => 'erdates#parse'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

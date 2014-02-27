@@ -1,3 +1,7 @@
+require 'rubygems'
+require 'nokogiri'
+require 'open-uri'
+
 class ErdatesController < ApplicationController
   # GET /erdates
   # GET /erdates.json
@@ -50,6 +54,51 @@ class ErdatesController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @erdate.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def parse
+    10.times do |n|
+      time = Time.now + n.day
+      puts time.strftime('%Y%m%d')
+
+      page = Nokogiri::HTML(open("http://biz.yahoo.com/research/earncal/" + time.strftime('%Y%m%d') + ".html"))
+      @tr = page.xpath("//tr[td/a[contains(@href, 's=')]]")
+      @tr.each do |elem|
+        #puts "#{elem} \n-----------\n"
+        stock = Stock.new
+        stock.name = elem.css('td')[0].text
+        stock.symbol = elem.css('td')[1].text
+        time_str = elem.css('td')[2].text
+
+        if Stock.find_by_symbol(stock.symbol).blank?
+          stock.save
+        else
+          stock = Stock.find_by_symbol(stock.symbol)
+        end
+
+        erdate_exists = Erdate.where('stock_id = ? and  datetime >= ?',
+                                     stock.id,
+                                     DateTime.strptime(time.strftime('%Y%m%d'), '%Y%m%d'))
+        #erdate_exists = Erdate.where('stock_id = ?', stock.id)
+        if erdate_exists.blank?
+          erdate = Erdate.new()
+          erdate.stock = stock
+          erdate.datetime = DateTime.strptime(time.strftime('%Y%m%d'), '%Y%m%d')
+          erdate.save
+        end
+
+        stock.erdates.each do |erdate|
+          puts erdate.stock.name + "\t" + erdate.datetime.to_s()
+        end
+      end
+
+    end
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: Stock.all }
+      format.xml { render xml: Stock.all }
     end
   end
 
