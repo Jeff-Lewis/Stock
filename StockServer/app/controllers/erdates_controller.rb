@@ -58,10 +58,13 @@ class ErdatesController < ApplicationController
   end
 
   def parse
-    10.times do |n|
-      time = Time.now + n.day
+    100.times do |n|
+      time = Time.now + 100.day + n.day
       puts time.strftime('%Y%m%d')
 
+      sleep(1)
+
+      begin
       page = Nokogiri::HTML(open("http://biz.yahoo.com/research/earncal/" + time.strftime('%Y%m%d') + ".html"))
       @tr = page.xpath("//tr[td/a[contains(@href, 's=')]]")
       @tr.each do |elem|
@@ -88,9 +91,14 @@ class ErdatesController < ApplicationController
           erdate.save
         end
 
-        stock.erdates.each do |erdate|
-          puts erdate.stock.name + "\t" + erdate.datetime.to_s()
-        end
+        #stock.erdates.each do |erdate|
+        #  puts erdate.stock.name + "\t" + erdate.datetime.to_s()
+        #end
+      end
+
+      rescue
+        puts "Error #{$!}"
+        puts "http://biz.yahoo.com/research/earncal/" + time.strftime('%Y%m%d') + ".html"
       end
 
     end

@@ -1,4 +1,10 @@
 StockServer::Application.routes.draw do
+  resources :details
+
+
+  resources :exchanges
+
+
   resources :erdates
 
 
@@ -10,6 +16,8 @@ StockServer::Application.routes.draw do
   root :to => 'stock#index'
 
   match 'parse' => 'erdates#parse'
+
+  match 'retrieve' => 'details#retrieve'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

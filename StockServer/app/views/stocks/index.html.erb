@@ -2,17 +2,21 @@
 
 <table>
   <tr>
+    <th>NO.</th>
     <th>Name</th>
     <th>Symbol</th>
+    <th>Exchange</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
-<% @stocks.each do |stock| %>
+<% @stocks.each_with_index do |stock, i| %>
   <tr>
+    <td><%= (i+1) %></td>
     <td><%= stock.name %></td>
     <td><%= stock.symbol %></td>
+    <td><%= stock.exchange %></td>
     <td><%= link_to 'Show', stock %></td>
     <td><%= link_to 'Edit', edit_stock_path(stock) %></td>
     <td><%= link_to 'Destroy', stock, method: :delete, data: { confirm: 'Are you sure?' } %></td>

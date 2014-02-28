@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Stock:</b>
+  <%= @detail.stock_id %>
+</p>
+
+<p>
+  <b>Exchange:</b>
+  <%= @detail.exchange_id %>
+</p>
+
+<p>
+  <b>Yearmin:</b>
+  <%= @detail.yearMin %>
+</p>
+
+<p>
+  <b>Yearmax:</b>
+  <%= @detail.yearMax %>
+</p>
+
+<p>
+  <b>Avgvol:</b>
+  <%= @detail.avgVol %>
+</p>
+
+<p>
+  <b>Marketcap:</b>
+  <%= @detail.marketCap %>
+</p>
+
+<p>
+  <b>Pe:</b>
+  <%= @detail.pe %>
+</p>
+
+<p>
+  <b>Eps:</b>
+  <%= @detail.eps %>
+</p>
+
+<p>
+  <b>Divyield:</b>
+  <%= @detail.divYield %>
+</p>
+
+
+<%= link_to 'Edit', edit_detail_path(@detail) %> |
+<%= link_to 'Back', details_path %>

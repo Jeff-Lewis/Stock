@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  stock_id: 1
+  exchange_id: 1
+  yearMin: 1.5
+  yearMax: 1.5
+  avgVol: 1.5
+  marketCap: 1.5
+  pe: 1.5
+  eps: 1.5
+  divYield: 1.5
+
+two:
+  stock_id: 1
+  exchange_id: 1
+  yearMin: 1.5
+  yearMax: 1.5
+  avgVol: 1.5
+  marketCap: 1.5
+  pe: 1.5
+  eps: 1.5
+  divYield: 1.5

@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>NO.</th>
     <th>Stock</th>
     <th>Datetime</th>
     <th>Estimate</th>
@@ -12,8 +13,9 @@
     <th></th>
   </tr>
 
-<% @erdates.each do |erdate| %>
+<% @erdates.each_with_index do |erdate, i| %>
   <tr>
+    <td><%= (i+1) %></td>
     <td><%= link_to erdate.stock.name, erdate.stock %></td>
     <td><%= erdate.datetime %></td>
     <td><%= erdate.estimate %></td>

@@ -1,0 +1,53 @@
+<%= form_for(@detail) do |f| %>
+  <% if @detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@detail.errors.count, "error") %> prohibited this detail from being saved:</h2>
+
+      <ul>
+      <% @detail.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :stock_id %><br />
+    <%= f.number_field :stock_id %>
+  </div>
+  <div class="field">
+    <%= f.label :exchange_id %><br />
+    <%= f.number_field :exchange_id %>
+  </div>
+  <div class="field">
+    <%= f.label :yearMin %><br />
+    <%= f.text_field :yearMin %>
+  </div>
+  <div class="field">
+    <%= f.label :yearMax %><br />
+    <%= f.text_field :yearMax %>
+  </div>
+  <div class="field">
+    <%= f.label :avgVol %><br />
+    <%= f.text_field :avgVol %>
+  </div>
+  <div class="field">
+    <%= f.label :marketCap %><br />
+    <%= f.text_field :marketCap %>
+  </div>
+  <div class="field">
+    <%= f.label :pe %><br />
+    <%= f.text_field :pe %>
+  </div>
+  <div class="field">
+    <%= f.label :eps %><br />
+    <%= f.text_field :eps %>
+  </div>
+  <div class="field">
+    <%= f.label :divYield %><br />
+    <%= f.text_field :divYield %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

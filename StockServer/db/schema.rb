@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140225055341) do
+ActiveRecord::Schema.define(:version => 20140228063800) do
+
+  create_table "details", :force => true do |t|
+    t.integer  "stock_id"
+    t.float    "yearMin"
+    t.float    "yearMax"
+    t.float    "avgVol"
+    t.float    "marketCap"
+    t.float    "pe"
+    t.float    "eps"
+    t.float    "divYield"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "erdates", :force => true do |t|
     t.integer  "stock_id"
@@ -19,6 +32,12 @@ ActiveRecord::Schema.define(:version => 20140225055341) do
     t.float    "estimate"
     t.float    "value"
     t.string   "confcall"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "exchanges", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -34,8 +53,9 @@ ActiveRecord::Schema.define(:version => 20140225055341) do
   create_table "stocks", :force => true do |t|
     t.string   "name"
     t.string   "symbol"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "exchange_id"
   end
 
 end
