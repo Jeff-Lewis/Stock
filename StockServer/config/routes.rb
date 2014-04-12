@@ -16,6 +16,7 @@ StockServer::Application.routes.draw do
   root :to => 'stock#index'
 
   match 'parse' => 'erdates#parse'
+  match 'parseErEst' => 'erdates#parseErEst'
 
   match 'retrieve' => 'details#retrieve'
 

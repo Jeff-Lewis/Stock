@@ -64,7 +64,8 @@ class DetailsController < ApplicationController
     quotes = YahooFinance::get_extended_quotes( quote_symbols )
     quotes.each do |symbol, qt|
       puts "QUOTING: #{symbol}"
-      puts qt.to_s
+      puts qt.stockExchange
+      #puts qt.to_s
     end
     #Stock.all.each do |stock|
     #  sleep(1/10)

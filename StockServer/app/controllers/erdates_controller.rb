@@ -57,6 +57,31 @@ class ErdatesController < ApplicationController
     end
   end
 
+  def parseErEst
+    symbol = params[:symbol]
+    date = params[:date]
+    date = date.gsub("-", "/")
+
+    puts symbol + " at " + date
+
+    page = Nokogiri::HTML(open("http://www.streetinsider.com/ec_earnings.php?q=" + symbol))
+    #@tr = page.xpath("//tr/td[text()='"+ date +"']")
+    @tr = page.xpath("//tr[td[contains(text(), '"+date+"')]]")
+    @tr.each do |elem|
+      #puts "#{elem} \n-----------\n"
+      11.times do |n|
+        puts n.to_s() + " = " + elem.css('td')[n].text
+      end
+
+      link = elem.css("a[text()='Details']")[0]
+      puts link['href']
+    end
+
+    @result = @tr
+
+    render :partial => "erdates/show.html"
+  end
+
   def parse
     100.times do |n|
       time = Time.now + 100.day + n.day

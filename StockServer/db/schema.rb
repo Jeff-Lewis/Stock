@@ -29,11 +29,11 @@ ActiveRecord::Schema.define(:version => 20140228063800) do
   create_table "erdates", :force => true do |t|
     t.integer  "stock_id"
     t.datetime "datetime"
-    t.float    "estimate"
-    t.float    "value"
+    t.float    "estimate",   :default => 0.0
+    t.float    "value",      :default => 0.0
     t.string   "confcall"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
   end
 
   create_table "exchanges", :force => true do |t|
@@ -44,10 +44,10 @@ ActiveRecord::Schema.define(:version => 20140228063800) do
 
   create_table "popularities", :force => true do |t|
     t.integer  "stock_id"
-    t.integer  "total"
-    t.integer  "trend"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "total",      :default => 0
+    t.integer  "trend",      :default => 0
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
   create_table "stocks", :force => true do |t|
