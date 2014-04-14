@@ -5,6 +5,8 @@ require 'open-uri'
 require 'yahoofinance'
 
 class DetailsController < ApplicationController
+  @NA = "N/A"
+
   # GET /details
   # GET /details.json
   def index
@@ -60,36 +62,105 @@ class DetailsController < ApplicationController
   end
 
   def retrieve
-    quote_symbols = "yhoo,goog"
-    quotes = YahooFinance::get_extended_quotes( quote_symbols )
-    quotes.each do |symbol, qt|
-      puts "QUOTING: #{symbol}"
-      puts qt.stockExchange
-      #puts qt.to_s
+    count = Stock.all.count
+    progress = 0.0
+    Stock.all.each do |stock|
+      tempProgress = stock.id.to_f() / count
+      if (tempProgress - progress > 0.01)
+        progress = tempProgress
+        puts progress
+      end
+
+      begin
+      sleep(0.2)
+      puts stock.inspect
+      updateDetail stock
+      rescue
+        puts "Error #{$!}"
+        puts stock.inspect
+      end
     end
-    #Stock.all.each do |stock|
-    #  sleep(1/10)
-    #
-    #  if stock.exchange.nil?
-    #    page = Nokogiri::HTML(open("http://finance.yahoo.com/q?s=" + stock.symbol))
-    #    exchangeStr = page.css("span[class='rtq_exch']").text
-    #    puts exchangeStr
-    #
-    #    if Exchange.find_by_name(exchangeStr).blank?
-    #      exchange = Exchange.new()
-    #      exchange.name = exchangeStr
-    #      exchange.save
-    #    else
-    #      exchange = Exchange.find_by_name(exchangeStr)
-    #    end
-    #
-    #    exchange.stocks << stock
-    #  end
-    #
-    #  if stock.detail.nil?
-    #    page = Nokogiri::HTML(open("http://finance.yahoo.com/q?s=" + stock.symbol))
-    #  end
-    #end
+  end
+
+  def updateDetail stock
+    sqt = getSimpleDetailHelper(stock.symbol)
+    qt = getDetailHelper(stock.symbol)
+
+    if stock.exchange.nil?
+      exchangeName = qt.stockExchange
+
+      exchange = nil
+      if Exchange.find_by_name(exchangeName).blank?
+        exchange = Exchange.new()
+        exchange.name = exchangeName
+        exchange.save
+      else
+        exchange = Exchange.find_by_name(exchangeName)
+      end
+
+      exchange.stocks << stock
+    end
+
+    detail = nil
+    if stock.detail.nil?
+      detail = Detail.new()
+      detail.stock = stock
+    else
+      detail = stock.detail
+    end
+
+    if (sqt.averageDailyVolume != @NA)
+      detail.avgVol = sqt.averageDailyVolume.to_f()
+    end
+
+    if (qt.dividendYield != @NA)
+      detail.divYield = qt.dividendYield.to_f()
+    end
+
+    if (qt.epsEstimateCurrentYear != @NA)
+      detail.eps = qt.epsEstimateCurrentYear.to_f()
+    end
+
+    if (qt.marketCap != @NA)
+      detail.marketCap = qt.marketCap
+    end
+
+    if (qt.peRatio != @NA)
+      detail.pe = qt.peRatio.to_f()
+    end
+
+    if (qt.weeks52Range != @NA)
+      detail.yearMax = qt.weeks52Range.split(" - ")[0].to_f()
+      detail.yearMin = qt.weeks52Range.split(" - ")[1].to_f()
+    end
+
+    detail.save()
+  end
+
+  def getSimpleDetailHelper symbol
+    detail = nil
+    quotes = YahooFinance::get_standard_quotes( symbol )
+    quotes.each do |symbol, qt|
+      #puts "QUOTING: #{symbol}"
+      #puts qt.to_s
+
+      detail = qt
+    end
+
+    detail
+  end
+
+  def getDetailHelper symbol
+    detail = nil
+    quotes = YahooFinance::get_extended_quotes( symbol )
+    quotes.each do |symbol, qt|
+      #puts "QUOTING: #{symbol}"
+      #puts qt.to_s
+
+      detail = qt
+    end
+
+    detail
   end
 
   # PUT /details/1

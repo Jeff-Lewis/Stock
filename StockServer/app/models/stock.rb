@@ -6,4 +6,6 @@ class Stock < ActiveRecord::Base
   has_many :erdates, dependent: :destroy
 
   belongs_to :exchange
+
+  has_and_belongs_to_many :users
 end

@@ -7,6 +7,8 @@ gem 'rails', '3.2.14'
 
 gem 'sqlite3'
 
+gem 'devise'
+
 gem 'nokogiri'
 gem 'yahoofinance'
 
@@ -23,6 +25,11 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+# import/export db
+# rake db:data:dump
+# rake db:data:load
+gem 'yaml_db'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

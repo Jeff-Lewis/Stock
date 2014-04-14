@@ -20,6 +20,10 @@ StockServer::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  # devise
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.assets.initialize_on_precompile = false
+
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 

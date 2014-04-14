@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+</head>
+<body>
+<h1>Feed Back</h1>
+
+<p>
+  You have successfully win a bid.<br/>
+  The Item you won is
+  <%= @post.title %>.<br/>
+  The Price you give is
+  <%= @post.max_bid %>.<br/>
+  Please use the link below to give your feed back:<br/>
+  http://localhost:3000/feedback_post/<%= @post.id %> <br/>
+</p>
+
+<p>Thanks for Your Feed Back and have a great day!</p>
+</body>
+</html>

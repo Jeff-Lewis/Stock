@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140228063800) do
+ActiveRecord::Schema.define(:version => 20140414002257) do
 
   create_table "details", :force => true do |t|
     t.integer  "stock_id"
     t.float    "yearMin"
     t.float    "yearMax"
     t.float    "avgVol"
-    t.float    "marketCap"
+    t.string   "marketCap"
     t.float    "pe"
     t.float    "eps"
     t.float    "divYield"
@@ -35,6 +35,13 @@ ActiveRecord::Schema.define(:version => 20140228063800) do
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
   end
+
+  create_table "erdates_users", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "erdate_id"
+  end
+
+  add_index "erdates_users", ["user_id", "erdate_id"], :name => "index_users_erdates_on_user_id_and_erdate_id", :unique => true
 
   create_table "exchanges", :force => true do |t|
     t.string   "name"
@@ -57,5 +64,41 @@ ActiveRecord::Schema.define(:version => 20140228063800) do
     t.datetime "updated_at",  :null => false
     t.integer  "exchange_id"
   end
+
+  create_table "stocks_users", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "stock_id"
+  end
+
+  add_index "stocks_users", ["user_id", "stock_id"], :name => "index_users_stocks_on_user_id_and_stock_id", :unique => true
+
+  create_table "user_relationships", :force => true do |t|
+    t.integer  "follower_id"
+    t.integer  "followee_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "user_relationships", ["followee_id"], :name => "index_user_relationships_on_followee_id"
+  add_index "user_relationships", ["follower_id", "followee_id"], :name => "index_user_relationships_on_follower_id_and_followee_id", :unique => true
+  add_index "user_relationships", ["follower_id"], :name => "index_user_relationships_on_follower_id"
+
+  create_table "users", :force => true do |t|
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0,  :null => false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end

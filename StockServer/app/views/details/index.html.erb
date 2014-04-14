@@ -18,8 +18,8 @@
 
 <% @details.each do |detail| %>
   <tr>
-    <td><%= detail.stock_id %></td>
-    <td><%= detail.exchange_id %></td>
+    <td><%= detail.stock.symbol %></td>
+    <td><%= detail.stock.exchange.name %></td>
     <td><%= detail.yearMin %></td>
     <td><%= detail.yearMax %></td>
     <td><%= detail.avgVol %></td>

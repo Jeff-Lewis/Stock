@@ -7,6 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="notice">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+</div>
+<div id="flash">
+  <% if flash[:notice] %>
+      <h3 class="info_box"><%= flash[:notice] %></h3>
+  <% end %>
+  <% if flash[:error] %>
+      <h3 class="error_box"><%= flash[:error] %></h3>
+  <% end %>
+</div>
 <div id="getting-started">
   <h1>Links</h1>
 

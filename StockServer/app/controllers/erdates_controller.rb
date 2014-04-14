@@ -3,6 +3,8 @@ require 'nokogiri'
 require 'open-uri'
 
 class ErdatesController < ApplicationController
+  @NA = "N/A"
+
   # GET /erdates
   # GET /erdates.json
   def index
@@ -64,27 +66,47 @@ class ErdatesController < ApplicationController
 
     puts symbol + " at " + date
 
-    page = Nokogiri::HTML(open("http://www.streetinsider.com/ec_earnings.php?q=" + symbol))
-    #@tr = page.xpath("//tr/td[text()='"+ date +"']")
-    @tr = page.xpath("//tr[td[contains(text(), '"+date+"')]]")
-    @tr.each do |elem|
-      #puts "#{elem} \n-----------\n"
-      11.times do |n|
-        puts n.to_s() + " = " + elem.css('td')[n].text
-      end
+    er = parseErEstHelper(symbol, date)
 
-      link = elem.css("a[text()='Details']")[0]
-      puts link['href']
-    end
-
-    @result = @tr
+    @result = er[:value]
 
     render :partial => "erdates/show.html"
   end
 
+  def parseErEstHelper symbol, date
+    value = @NA
+    est = @NA
+    link = @NA
+    begin
+
+    page = Nokogiri::HTML(open("http://www.streetinsider.com/ec_earnings.php?q=" + symbol))
+    tr = page.xpath("//tr[td[contains(text(), '" + date + "')]]")
+    tr.each do |elem|
+      #puts "#{elem} \n-----------\n"
+      #11.times do |n|
+      #  puts n.to_s() + " = " + elem.css('td')[n].text
+      #end
+
+      value = elem.css('td')[3].text.gsub("$", "")
+
+      est = elem.css('td')[4].text.gsub("$", "")
+
+      link = elem.css("a[text()='Details']")[0]['href']
+      puts "#{symbol} @#{date} = est:#{est} value:#{value} link:#{link}"
+    end
+
+    rescue
+      puts "Error #{$!}"
+      puts "http://www.streetinsider.com/ec_earnings.php?q=" + symbol + " date at " + date
+    end
+
+    { symbol: symbol, date: date, value: value, est: est, link: link }
+  end
+
   def parse
     100.times do |n|
-      time = Time.now + 100.day + n.day
+      #time = Time.now - 101.day + n.day
+      time = Time.strptime('20140221', '%Y%m%d') + n.day
       puts time.strftime('%Y%m%d')
 
       sleep(1)
@@ -94,6 +116,8 @@ class ErdatesController < ApplicationController
       @tr = page.xpath("//tr[td/a[contains(@href, 's=')]]")
       @tr.each do |elem|
         #puts "#{elem} \n-----------\n"
+        sleep(0.2)
+
         stock = Stock.new
         stock.name = elem.css('td')[0].text
         stock.symbol = elem.css('td')[1].text
@@ -109,12 +133,34 @@ class ErdatesController < ApplicationController
                                      stock.id,
                                      DateTime.strptime(time.strftime('%Y%m%d'), '%Y%m%d'))
         #erdate_exists = Erdate.where('stock_id = ?', stock.id)
+        erdate = nil
         if erdate_exists.blank?
           erdate = Erdate.new()
           erdate.stock = stock
           erdate.datetime = DateTime.strptime(time.strftime('%Y%m%d'), '%Y%m%d')
+
           erdate.save
+        else
+          erdate = erdate_exists.first
         end
+
+        #update er data
+        date = time.strftime('%-m/%-d') + "/" + (time.year - 2000).to_s()
+        er = parseErEstHelper(stock.symbol, date)
+
+        if (er[:est] != @NA)
+          erdate.estimate = er[:est].to_f()
+        end
+
+        if (er[:value] != @NA)
+          erdate.value = er[:value].to_f()
+        end
+
+        if (er[:link] != @NA)
+          erdate.confcall = er[:link]
+        end
+
+        erdate.save
 
         #stock.erdates.each do |erdate|
         #  puts erdate.stock.name + "\t" + erdate.datetime.to_s()
@@ -132,6 +178,132 @@ class ErdatesController < ApplicationController
       format.html # index.html.erb
       format.json { render json: Stock.all }
       format.xml { render xml: Stock.all }
+    end
+  end
+
+  def watchEr
+    userId = params[:userId]
+    erdateId = params[:erdateId]
+
+    @result = false
+    if !userId.nil? && !erdateId.nil?
+
+      begin
+      user = User.find(userId)
+      erdate = Erdate.find(erdateId)
+
+      if (!user.nil? && !erdate.nil?)
+        user.watchEr!(erdate)
+        @result = true
+      end
+
+      rescue
+        puts "Error #{$!}"
+        puts userId + " watch " + erdateId
+      end
+    end
+
+    @erdates = []
+
+    if (!user.nil?)
+      @erdates = user.erdates
+    end
+
+    respond_to do |format|
+      if @result
+        flash[:notice] = "Erdate was successfully watched."
+        format.html
+        format.json { render :partial => "erdates/show.json" }
+      else
+        flash[:error] = "Erdate failed to be watched."
+        format.html
+        format.json { render :partial => "erdates/show.json", status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def unwatchEr
+    userId = params[:userId]
+    erdateId = params[:erdateId]
+
+    @result = false
+    if !userId.nil? && !erdateId.nil?
+
+      begin
+        user = User.find(userId)
+        erdate = Erdate.find(erdateId)
+
+        if (!user.nil? && !erdate.nil?)
+          user.unwatchEr!(erdate)
+          @result = true
+        end
+
+      rescue
+        puts "Error #{$!}"
+        puts userId + " unwatch " + erdateId
+      end
+    end
+
+    @erdates = []
+
+    if (!user.nil?)
+      @erdates = user.erdates
+    end
+
+    respond_to do |format|
+      if @result
+        flash[:notice] = "Erdate was successfully unwatched."
+        format.html
+        format.json { render :partial => "erdates/show.json" }
+      else
+        flash[:error] = "Erdate failed to be unwatched."
+        format.html
+        format.json { render :partial => "erdates/show.json", status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def getPreviousErs
+    date = params[:date]
+    num = params[:num].to_i() || 7
+
+    begin
+
+      @erdates = Erdate.where('datetime < ? and datetime >= ?',
+                              DateTime.strptime(date, '%Y%m%d'),
+                              DateTime.strptime(date, '%Y%m%d') - num.days).order('datetime asc')
+
+    rescue
+      puts "Error #{$!}"
+      puts date
+    end
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render :json => @erdates, :include => {:stock => { :include => [:popularity, :exchange] }} }
+      format.xml { render :xml=> @erdates, :include => {:stock => { :include => [:popularity, :exchange] }} }
+    end
+  end
+
+  def getNextErs
+    date = params[:date]
+    num = params[:num].to_i() || 7
+
+    begin
+
+    @erdates = Erdate.where('datetime >= ? and datetime <= ?',
+                                 DateTime.strptime(date, '%Y%m%d'),
+                                 DateTime.strptime(date, '%Y%m%d') + num.days).order('datetime asc')
+
+    rescue
+      puts "Error #{$!}"
+      puts date
+    end
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render :json => @erdates, :include => {:stock => { :include => [:popularity, :exchange] }} }
+      format.xml { render :xml=> @erdates, :include => {:stock => { :include => [:popularity, :exchange] }} }
     end
   end
 

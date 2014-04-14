@@ -1,4 +1,9 @@
 StockServer::Application.routes.draw do
+  devise_for :users, :path => "auth", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret',
+        :confirmation => 'verification', :unlock => 'unblock', :sign_up => 'cmon_let_me_in' }, :controllers => {:registrations => "registrations"}
+
+  resources :users
+
   resources :details
 
 
@@ -13,10 +18,14 @@ StockServer::Application.routes.draw do
 
   resources :stocks
 
-  root :to => 'stock#index'
+  root :to => 'stocks#index'
 
   match 'parse' => 'erdates#parse'
   match 'parseErEst' => 'erdates#parseErEst'
+  match 'getNextErs' => 'erdates#getNextErs'
+  match 'getPreviousErs' => 'erdates#getPreviousErs'
+  match 'watchEr' => 'erdates#watchEr'
+  match 'unwatchEr' => 'erdates#unwatchEr'
 
   match 'retrieve' => 'details#retrieve'
 
