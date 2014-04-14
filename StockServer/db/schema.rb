@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140414002257) do
+ActiveRecord::Schema.define(:version => 20140414030435) do
+
+  create_table "beat_misses", :force => true do |t|
+    t.integer  "erdate_id"
+    t.integer  "user_id"
+    t.integer  "beat"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "details", :force => true do |t|
     t.integer  "stock_id"
@@ -34,11 +42,13 @@ ActiveRecord::Schema.define(:version => 20140414002257) do
     t.string   "confcall"
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
+    t.integer  "beat_cnt"
+    t.integer  "miss_cnt"
   end
 
   create_table "erdates_users", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "erdate_id"
+    t.integer "user_id"
+    t.integer "erdate_id"
   end
 
   add_index "erdates_users", ["user_id", "erdate_id"], :name => "index_users_erdates_on_user_id_and_erdate_id", :unique => true
@@ -66,8 +76,8 @@ ActiveRecord::Schema.define(:version => 20140414002257) do
   end
 
   create_table "stocks_users", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "stock_id"
+    t.integer "user_id"
+    t.integer "stock_id"
   end
 
   add_index "stocks_users", ["user_id", "stock_id"], :name => "index_users_stocks_on_user_id_and_stock_id", :unique => true

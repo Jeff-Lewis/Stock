@@ -307,6 +307,80 @@ class ErdatesController < ApplicationController
     end
   end
 
+  def beatEr
+    userId = params[:userId]
+    erdateId = params[:erdateId]
+
+    beh = beatErHelper(userId, erdateId, true)
+
+    @beat_misses = beh[:beat_misses]
+
+    respond_to do |format|
+      if beh[:result]
+        flash[:notice] = "Erdate was successfully watched."
+        format.html
+        format.json { render :partial => "erdates/show.json" }
+      else
+        flash[:error] = "Erdate failed to be watched."
+        format.html
+        format.json { render :partial => "erdates/show.json", status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def missEr
+    userId = params[:userId]
+    erdateId = params[:erdateId]
+
+    beh = beatErHelper(userId, erdateId, false)
+
+    @beat_misses = beh[:beat_misses]
+
+    respond_to do |format|
+      if beh[:result]
+        flash[:notice] = "Erdate was successfully watched."
+        format.html
+        format.json { render :partial => "erdates/show.json" }
+      else
+        flash[:error] = "Erdate failed to be watched."
+        format.html
+        format.json { render :partial => "erdates/show.json", status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def beatErHelper userId, erdateId, beat
+    result = false
+    if !userId.nil? && !erdateId.nil?
+
+      begin
+        user = User.find(userId)
+        erdate = Erdate.find(erdateId)
+
+        if (!user.nil? && !erdate.nil?)
+          if (beat)
+            user.beatEr!(erdate)
+          else
+            user.missEr!(erdate)
+          end
+          result = true
+        end
+
+      rescue
+        puts "Error #{$!}"
+        puts userId + " watch " + erdateId
+      end
+    end
+
+    beat_misses = []
+
+    if (!user.nil?)
+      beat_misses = user.beat_misses
+    end
+
+    {result: result, beat_misses: beat_misses}
+  end
+
   # PUT /erdates/1
   # PUT /erdates/1.json
   def update

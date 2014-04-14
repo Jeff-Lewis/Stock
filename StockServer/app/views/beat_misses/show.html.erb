@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Erdate:</b>
+  <%= @beat_miss.erdate_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @beat_miss.user_id %>
+</p>
+
+<p>
+  <b>Beat:</b>
+  <%= @beat_miss.beat %>
+</p>
+
+
+<%= link_to 'Edit', edit_beat_miss_path(@beat_miss) %> |
+<%= link_to 'Back', beat_misses_path %>

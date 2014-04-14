@@ -1,0 +1,27 @@
+<h1>Listing beat_misses</h1>
+
+<table>
+  <tr>
+    <th>Erdate</th>
+    <th>User</th>
+    <th>Beat</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @beat_misses.each do |beat_miss| %>
+  <tr>
+    <td><%= beat_miss.erdate_id %></td>
+    <td><%= beat_miss.user_id %></td>
+    <td><%= beat_miss.beat %></td>
+    <td><%= link_to 'Show', beat_miss %></td>
+    <td><%= link_to 'Edit', edit_beat_miss_path(beat_miss) %></td>
+    <td><%= link_to 'Destroy', beat_miss, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Beat miss', new_beat_miss_path %>

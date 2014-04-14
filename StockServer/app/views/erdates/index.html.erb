@@ -8,6 +8,8 @@
     <th>Estimate</th>
     <th>Value</th>
     <th>Confcall</th>
+    <th>Beat</th>
+    <th>Miss</th>
     <th></th>
     <th></th>
     <th></th>
@@ -20,6 +22,8 @@
         <td><%= erdate.estimate %></td>
         <td><%= erdate.value %></td>
         <td><%= erdate.confcall %></td>
+        <td><%= erdate.beat_cnt %></td>
+        <td><%= erdate.miss_cnt %></td>
         <td><%= link_to 'Show', erdate %></td>
         <td><%= link_to 'Edit', edit_erdate_path(erdate) %></td>
         <td><%= link_to 'Destroy', erdate, method: :delete, data: {confirm: 'Are you sure?'} %></td>

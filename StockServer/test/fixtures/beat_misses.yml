@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  erdate_id: 1
+  user_id: 1
+  beat: 1
+
+two:
+  erdate_id: 1
+  user_id: 1
+  beat: 1
