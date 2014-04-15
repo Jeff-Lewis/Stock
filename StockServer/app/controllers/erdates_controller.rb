@@ -320,9 +320,9 @@ class ErdatesController < ApplicationController
     beh = beatErHelper(userId, erdateId, true)
 
     @beat_misses = beh[:beat_misses]
-
+    @result = heh[:result]
     respond_to do |format|
-      if beh[:result]
+      if @result
         flash[:notice] = "Erdate was successfully watched."
         format.html
         format.json { render :partial => "erdates/show.json" }
@@ -341,9 +341,9 @@ class ErdatesController < ApplicationController
     beh = beatErHelper(userId, erdateId, false)
 
     @beat_misses = beh[:beat_misses]
-
+    @result = heh[:result]
     respond_to do |format|
-      if beh[:result]
+      if @result
         flash[:notice] = "Erdate was successfully watched."
         format.html
         format.json { render :partial => "erdates/show.json" }
