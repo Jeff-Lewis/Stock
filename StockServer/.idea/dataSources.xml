@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="4118167947">
+  <component name="DataSourceManagerImpl" format="xml" hash="3471243678">
     <data-source source="LOCAL" name="Rails StockServer: development" uuid="70a837fc-0901-4999-a9b4-894181fb5f73">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
@@ -26,6 +26,14 @@
           <url>file://$USER_HOME$/.RubyMine50/config/jdbc-drivers/sqlite-jdbc-3.7.6.3-20110609.081603-3.jar</url>
         </library>
       </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="Rails StockServer: production" uuid="15485b5d-bff8-42cd-b36a-acc937f63a85">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:stock_earning_cal_production</jdbc-url>
+      <user-name>stock_earning_cal</user-name>
+      <user-password>dfffdfd9dfcfdfd8dfeadf9bdf98df99</user-password>
+      <libraries />
     </data-source>
   </component>
 </project>

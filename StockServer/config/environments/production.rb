@@ -21,7 +21,7 @@ StockServer::Application.configure do
   config.assets.digest = true
 
   # devise
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.action_mailer.default_url_options = { host: 'stock-earning-cal.herokuapp.com' }
   config.assets.initialize_on_precompile = false
 
   # Defaults to nil and saved in location specified by config.assets.prefix
