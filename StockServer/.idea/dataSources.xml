@@ -17,7 +17,7 @@
     <data-source source="LOCAL" name="Rails StockServer: test" uuid="68334a29-f4f6-4023-a106-508c3f89d43f">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:E:\Git\Stock\StockServer\db\test.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:D:\WorkSpace\Ruby\Stock\StockServer\db\test.sqlite3</jdbc-url>
       <libraries>
         <library>
           <url>file://$USER_HOME$/.RubyMine50/config/jdbc-drivers/xerial-sqlite-license.txt</url>

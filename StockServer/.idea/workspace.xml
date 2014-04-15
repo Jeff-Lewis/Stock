@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3a005df-009e-4ac2-83df-73a3078fa34d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/erdates/_beatmissEr.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/erdates/_getErs.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/erdates/beatEr.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/erdates/missEr.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/erdate.rb" afterPath="$PROJECT_DIR$/app/models/erdate.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/erdates/_getErs.json.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/erdates_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/erdates_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/erdates/getNextErs.html.erb" afterPath="$PROJECT_DIR$/app/views/erdates/getNextErs.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/erdates/getPreviousErs.html.erb" afterPath="$PROJECT_DIR$/app/views/erdates/getPreviousErs.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/erdates/index.html.erb" afterPath="$PROJECT_DIR$/app/views/erdates/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/erdates/unwatchEr.html.erb" afterPath="$PROJECT_DIR$/app/views/erdates/unwatchEr.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/erdates/watchEr.html.erb" afterPath="$PROJECT_DIR$/app/views/erdates/watchEr.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/erdates_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/erdates_helper.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="StockServer.iws" />
@@ -28,12 +18,12 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/StockServer@Development__StockServer.coverage" NAME="Development: StockServer Coverage Results" MODIFIED="1397444494943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="StockServer" />
+    <SUITE FILE_PATH="coverage/StockServer@Development__StockServer.coverage" NAME="Development: StockServer Coverage Results" MODIFIED="1397529716575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="StockServer" />
     <SUITE FILE_PATH="coverage/StockServer@db_dump__StockServer.coverage" NAME="db:dump: StockServer Coverage Results" MODIFIED="1397436250531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="StockServer" />
     <SUITE FILE_PATH="coverage/StockServer@db_migrate.coverage" NAME="db:migrate Coverage Results" MODIFIED="1394779882577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="StockServer" />
     <SUITE FILE_PATH="coverage/StockServer@db_load__StockServer.coverage" NAME="db:load: StockServer Coverage Results" MODIFIED="1397436615520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="StockServer" />
-    <SUITE FILE_PATH="coverage/StockServer@db_migrate__StockServer.coverage" NAME="db:migrate: StockServer Coverage Results" MODIFIED="1397444736143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="StockServer" />
     <SUITE FILE_PATH="coverage/StockServer@db_data_load__StockServer.coverage" NAME="db:data:load: StockServer Coverage Results" MODIFIED="1397436417377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="StockServer" />
+    <SUITE FILE_PATH="coverage/StockServer@db_migrate__StockServer.coverage" NAME="db:migrate: StockServer Coverage Results" MODIFIED="1397444736143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="StockServer" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -47,55 +37,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="20140414021832_create_beat_misses.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20140414021832_create_beat_misses.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="12" selection-start="61" selection-end="61" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="20140414030435_add_beat_cnt_to_erdates.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20140414030435_add_beat_cnt_to_erdates.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="44" selection-start="154" selection-end="154" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="erdate.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/erdate.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="23" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+            <state line="1" column="49" selection-start="75" selection-end="83" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_getErs.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/erdates/_getErs.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="4" selection-start="533" selection-end="600" vertical-scroll-proportion="-16.346153" vertical-offset="0" max-vertical-offset="731">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/erdates/index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="39" selection-start="637" selection-end="637" vertical-scroll-proportion="-14.307693" vertical-offset="53" max-vertical-offset="714">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="user.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/user.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="0" selection-start="1927" selection-end="1927" vertical-scroll-proportion="0.8920742" vertical-offset="780" max-vertical-offset="1547">
+            <state line="69" column="0" selection-start="1775" selection-end="1775" vertical-scroll-proportion="0.0" vertical-offset="466" max-vertical-offset="1547">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="erdates_helper.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/helpers/erdates_helper.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="0" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="getNextErs.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/erdates/getNextErs.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="22" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="102">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_getErs.json.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/erdates/_getErs.json.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="57" selection-start="171" selection-end="171" vertical-scroll-proportion="0.11564626" vertical-offset="0" max-vertical-offset="588">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="erdates_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/erdates_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="310" column="62" selection-start="7689" selection-end="7689" vertical-scroll-proportion="0.0" vertical-offset="4537" max-vertical-offset="7191">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_beatmissEr.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/erdates/_beatmissEr.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="595">
               <folding />
             </state>
           </provider>
@@ -113,25 +112,7 @@
       <file leaf-file-name="beat_miss.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/beat_miss.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="17" selection-start="257" selection-end="257" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="20140413185327_change_market_cap_format_in_detail.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20140413185327_change_market_cap_format_in_detail.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="20140228063800_add_exchange_id_to_stocks.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20140228063800_add_exchange_id_to_stocks.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="2" selection-start="56" selection-end="119" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
+            <state line="19" column="17" selection-start="257" selection-end="257" vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="476">
               <folding />
             </state>
           </provider>
@@ -167,7 +148,6 @@
         <option value="$PROJECT_DIR$/app/models/detail.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20140228063253_create_details.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_show.json.erb" />
-        <option value="$PROJECT_DIR$/app/helpers/erdates_helper.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20140413185327_change_market_cap_format_in_detail.rb" />
         <option value="$PROJECT_DIR$/app/views/details/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/details/show.html.erb" />
@@ -194,7 +174,6 @@
         <option value="$PROJECT_DIR$/db/migrate/20140413233908_create_users_stocks_join_table.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20140413235613_create_users_erdates_join_table.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/erdates_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/erdates/beatEr.html.erb" />
         <option value="$PROJECT_DIR$/app/views/erdates/missEr.html.erb" />
         <option value="$PROJECT_DIR$/app/views/erdates/getNextErs.html.erb" />
@@ -208,6 +187,9 @@
         <option value="$PROJECT_DIR$/app/views/erdates/index.html.erb" />
         <option value="$PROJECT_DIR$/app/models/beat_miss.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
+        <option value="$PROJECT_DIR$/app/helpers/erdates_helper.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/erdates_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/erdates/_getErs.json.erb" />
       </list>
     </option>
   </component>
@@ -302,6 +284,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
@@ -435,13 +418,30 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="helpers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StockServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StockServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -473,7 +473,7 @@
       <recent name="E:\Git\Stock\StockServer\app\models" />
     </key>
   </component>
-  <component name="RunManager" selected="Rake.db:migrate: StockServer">
+  <component name="RunManager" selected="Rails.Development: StockServer">
     <configuration default="false" name="db:reset" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
       <module name="StockServer" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -735,10 +735,10 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Rake.db:migrate: StockServer" />
-        <item index="1" class="java.lang.String" itemvalue="Rake.db:load: StockServer" />
-        <item index="2" class="java.lang.String" itemvalue="Rake.db:data:load: StockServer" />
-        <item index="3" class="java.lang.String" itemvalue="Rake.db:dump: StockServer" />
+        <item index="0" class="java.lang.String" itemvalue="Rake.db:load: StockServer" />
+        <item index="1" class="java.lang.String" itemvalue="Rake.db:data:load: StockServer" />
+        <item index="2" class="java.lang.String" itemvalue="Rake.db:dump: StockServer" />
+        <item index="3" class="java.lang.String" itemvalue="Rake.db:migrate: StockServer" />
         <item index="4" class="java.lang.String" itemvalue="Rake.db:reset" />
       </list>
     </recent_temporary>
@@ -769,28 +769,48 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1358" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32983193" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277311" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32878152" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32983193" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18157615" sideWeight="0.6706667" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18317358" sideWeight="0.6706667" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3277311" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3277311" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32983193" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32878152" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -812,130 +832,89 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/details_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="10" selection-start="1165" selection-end="1165" vertical-scroll-proportion="0.0" vertical-offset="879" max-vertical-offset="3383">
-          <folding />
-        </state>
+        <state line="56" column="10" selection-start="1165" selection-end="1165" vertical-scroll-proportion="0.0" vertical-offset="879" max-vertical-offset="3383" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="4" selection-start="1379" selection-end="1379" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="782">
-          <folding />
-        </state>
+        <state line="37" column="4" selection-start="1379" selection-end="1379" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="782" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="48" selection-start="846" selection-end="846" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1309">
-          <folding />
-        </state>
+        <state line="24" column="48" selection-start="846" selection-end="846" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1309" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/initializers/setup_mail.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="38" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
-          <folding />
-        </state>
+        <state line="5" column="38" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/initializers/devise.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="53" selection-start="788" selection-end="788" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4454">
-          <folding />
-        </state>
+        <state line="12" column="53" selection-start="788" selection-end="788" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4454" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/mailers/user_mailer.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="34" selection-start="111" selection-end="111" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="867">
-          <folding />
-        </state>
+        <state line="2" column="34" selection-start="111" selection-end="111" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="867" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/stocks_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1513">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1513" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/stocks/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140413222742_devise_create_users.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/destroy.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="614">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="614" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="39" selection-start="336" selection-end="336" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-          <folding />
-        </state>
+        <state line="13" column="39" selection-start="336" selection-end="336" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user_mailer/welcome_email.text.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="614">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="614" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user_mailer/welcome_email.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/registrations_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="16" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-          <folding />
-        </state>
+        <state line="15" column="16" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/stocks/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="28" selection-start="465" selection-end="465" vertical-scroll-proportion="-15.038462" vertical-offset="0" max-vertical-offset="663">
-          <folding />
-        </state>
+        <state line="23" column="28" selection-start="465" selection-end="465" vertical-scroll-proportion="-15.038462" vertical-offset="0" max-vertical-offset="663" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140225052405_create_stocks.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="614">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="614" />
       </provider>
     </entry>
     <entry file="file://C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/dependencies.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="467" column="0" selection-start="16384" selection-end="16384" vertical-scroll-proportion="0.33224756" vertical-offset="7735" max-vertical-offset="12053">
-          <folding />
-        </state>
+        <state line="467" column="0" selection-start="16384" selection-end="16384" vertical-scroll-proportion="0.33224756" vertical-offset="7735" max-vertical-offset="12053" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/user_relationship.rb">
@@ -947,39 +926,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140413234707_create_user_relationships.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-          <folding />
-        </state>
+        <state line="14" column="0" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/erdates/_show.json.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="30" selection-start="32" selection-end="32" vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="136">
-          <folding />
-        </state>
+        <state line="1" column="30" selection-start="32" selection-end="32" vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="136" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="21" selection-start="211" selection-end="211" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="425">
-          <folding />
-        </state>
+        <state line="13" column="21" selection-start="211" selection-end="211" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="425" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140414002210_rename_users_stocks_table_to_stocks_users_table.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="2" selection-start="75" selection-end="137" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
-          <folding>
-            <marker date="1397434950942" expanded="true" signature="-1:-1" placeholder=" ... end" />
-          </folding>
-        </state>
+        <state line="1" column="2" selection-start="75" selection-end="137" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140414002257_rename_users_erdates_table_to_erdates_users_table.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="47" selection-start="135" selection-end="135" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
-          <folding />
-        </state>
+        <state line="2" column="47" selection-start="135" selection-end="135" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
@@ -991,58 +958,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140413233908_create_users_stocks_join_table.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="161" selection-end="161" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
-          <folding />
-        </state>
+        <state line="5" column="0" selection-start="161" selection-end="161" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140413235613_create_users_erdates_join_table.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
-          <folding />
-        </state>
+        <state line="5" column="0" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="6" selection-start="512" selection-end="512" vertical-scroll-proportion="0.50617284" vertical-offset="53" max-vertical-offset="782">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/stock.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="42" selection-start="102" selection-end="123" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/erdates_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="593">
-          <folding />
-        </state>
+        <state line="20" column="6" selection-start="512" selection-end="512" vertical-scroll-proportion="0.50617284" vertical-offset="53" max-vertical-offset="782" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/beat_misses/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/erdates/_beatmissEr.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="614">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/beat_misses/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="28" selection-end="48" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="204">
-          <folding />
-        </state>
+        <state line="2" column="0" selection-start="28" selection-end="48" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="204" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/erdates/missEr.html.erb">
@@ -1055,13 +991,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/erdates/beatEr.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="0" selection-start="1" selection-end="27" vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="136">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/erdates/getNextErs.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="22" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="102">
           <folding />
         </state>
       </provider>
@@ -1083,13 +1012,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/erdates/watchEr.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="22" selection-start="22" selection-end="22" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="567">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/erdates_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="330" column="10" selection-start="8333" selection-end="8333" vertical-scroll-proportion="0.0" vertical-offset="5374" max-vertical-offset="7089">
           <folding />
         </state>
       </provider>
@@ -1129,23 +1051,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/erdate.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="23" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/erdates/_getErs.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="4" selection-start="533" selection-end="600" vertical-scroll-proportion="-16.346153" vertical-offset="0" max-vertical-offset="731">
+        <state line="25" column="4" selection-start="533" selection-end="600" vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="731">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/erdates/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="39" selection-start="637" selection-end="637" vertical-scroll-proportion="-14.307693" vertical-offset="53" max-vertical-offset="714">
+        <state line="25" column="39" selection-start="637" selection-end="637" vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="714">
           <folding />
         </state>
       </provider>
@@ -1166,7 +1081,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="0" selection-start="1927" selection-end="1927" vertical-scroll-proportion="0.8920742" vertical-offset="780" max-vertical-offset="1547">
+        <state line="69" column="0" selection-start="1775" selection-end="1775" vertical-scroll-proportion="0.0" vertical-offset="619" max-vertical-offset="1547">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/erdates/getNextErs.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="22" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="102">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/erdates/_beatmissEr.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="614">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/erdate.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="49" selection-start="75" selection-end="83" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/erdates_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/erdates_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="310" column="62" selection-start="7689" selection-end="7689" vertical-scroll-proportion="0.0" vertical-offset="4537" max-vertical-offset="7191">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/stock.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="42" selection-start="102" selection-end="123" vertical-scroll-proportion="0.08306189" vertical-offset="0" max-vertical-offset="614">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/erdates/_getErs.json.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="57" selection-start="171" selection-end="171" vertical-scroll-proportion="0.11564626" vertical-offset="0" max-vertical-offset="588">
           <folding />
         </state>
       </provider>

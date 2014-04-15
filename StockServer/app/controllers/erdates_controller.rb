@@ -265,9 +265,12 @@ class ErdatesController < ApplicationController
 
   def getPreviousErs
     date = params[:date]
+    userId = params[:userId]
     num = params[:num].to_i() || 7
 
     begin
+
+      @user = User.find(userId)
 
       @erdates = Erdate.where('datetime < ? and datetime >= ?',
                               DateTime.strptime(date, '%Y%m%d'),
@@ -275,25 +278,28 @@ class ErdatesController < ApplicationController
 
     rescue
       puts "Error #{$!}"
-      puts date
+      puts date + " user: " + userId
     end
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render :json => @erdates, :include => {:stock => { :include => [:popularity, :exchange] }} }
+      format.json { render :partial => "erdates/getErs.json" }
       format.xml { render :xml=> @erdates, :include => {:stock => { :include => [:popularity, :exchange] }} }
     end
   end
 
   def getNextErs
     date = params[:date]
+    userId = params[:userId]
     num = params[:num].to_i() || 7
 
     begin
 
-    @erdates = Erdate.where('datetime >= ? and datetime <= ?',
-                                 DateTime.strptime(date, '%Y%m%d'),
-                                 DateTime.strptime(date, '%Y%m%d') + num.days).order('datetime asc')
+      @user = User.find(userId)
+
+      @erdates = Erdate.where('datetime >= ? and datetime <= ?',
+                                   DateTime.strptime(date, '%Y%m%d'),
+                                   DateTime.strptime(date, '%Y%m%d') + num.days).order('datetime asc')
 
     rescue
       puts "Error #{$!}"
@@ -302,7 +308,7 @@ class ErdatesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render :json => @erdates, :include => {:stock => { :include => [:popularity, :exchange] }} }
+      format.json { render :partial => "erdates/getErs.json" }
       format.xml { render :xml=> @erdates, :include => {:stock => { :include => [:popularity, :exchange] }} }
     end
   end
