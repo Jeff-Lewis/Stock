@@ -1,4 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
+  skip_before_filter :authenticate_user_from_token!
 
   # This method is to create the User
   # The following data will be created for the User once he/she registered

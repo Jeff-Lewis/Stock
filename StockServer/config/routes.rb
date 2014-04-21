@@ -3,7 +3,8 @@ StockServer::Application.routes.draw do
 
 
   devise_for :users, :path => "auth", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret',
-        :confirmation => 'verification', :unlock => 'unblock', :sign_up => 'cmon_let_me_in' }, :controllers => {:registrations => "registrations"}
+        :confirmation => 'verification', :unlock => 'unblock', :sign_up => 'cmon_let_me_in' }
+  #, :controllers => {:registrations => "registrations"}
 
   resources :users
 
@@ -33,6 +34,16 @@ StockServer::Application.routes.draw do
   match 'missEr' => 'erdates#missEr'
 
   match 'retrieve' => 'details#retrieve'
+
+  namespace :api do
+    namespace :v1 do
+      devise_scope :user do
+        post 'registrations' => 'registrations#create', :as => 'register'
+        post 'sessions' => 'sessions#create', :as => 'login'
+        delete 'sessions' => 'sessions#destroy', :as => 'logout'
+      end
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

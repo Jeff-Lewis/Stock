@@ -5,6 +5,7 @@
     <th>NO.</th>
     <th>id</th>
     <th>email</th>
+    <th>auth</th>
     <th></th>
   </tr>
 
@@ -13,6 +14,7 @@
       <td><%= (i+1) %></td>
       <td><%= "#{u.id}" %></td>
       <td><%= "#{u.email}" %></td>
+      <td><%=  "#{u.authentication_token}" %></td>
       <td><%= link_to 'Show', u %></td>
       <td><%= link_to 'Destroy', u, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>

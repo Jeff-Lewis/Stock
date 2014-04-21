@@ -1,25 +1,27 @@
 class User < ActiveRecord::Base
+  before_save :ensure_authentication_token
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :authentication_token
   # attr_accessible :title, :body
 
   has_and_belongs_to_many :stocks
   has_and_belongs_to_many :erdates
 
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy
-  has_many :followees, through: :relationships, source: :followee
+  has_many :followees, through: :relationships, source: :followee, :dependent => :destroy
 
   has_many :reverse_relationships, foreign_key: "followee_id",
            class_name:  "UserRelationship",
            dependent:   :destroy
-  has_many :followers, through: :reverse_relationships, source: :follower
+  has_many :followers, through: :reverse_relationships, source: :follower, :dependent => :destroy
 
-  has_many :beat_misses
+  has_many :beat_misses, :dependent => :destroy
 
   def following?(other_user)
     relationships.where(followee_id: other_user.id).present?
@@ -80,6 +82,21 @@ class User < ActiveRecord::Base
       erdate.save()
 
       beat_misses << bm
+    end
+  end
+
+  def ensure_authentication_token
+    if authentication_token.blank?
+      self.authentication_token = generate_authentication_token
+    end
+  end
+
+  private
+
+  def generate_authentication_token
+    loop do
+      token = Devise.friendly_token
+      break token unless User.where(authentication_token: token).first
     end
   end
 end

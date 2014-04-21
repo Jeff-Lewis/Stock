@@ -3,6 +3,8 @@ require 'nokogiri'
 require 'open-uri'
 
 class ErdatesController < ApplicationController
+  protect_from_forgery
+
   @NA = "N/A"
 
   # GET /erdates
@@ -69,8 +71,7 @@ class ErdatesController < ApplicationController
     er = parseErEstHelper(symbol, date)
 
     @result = er[:value]
-
-    render :partial => "erdates/show.html"
+    render :partial => "layouts/show.html"
   end
 
   def parseErEstHelper symbol, date
@@ -213,11 +214,11 @@ class ErdatesController < ApplicationController
       if @result
         flash[:notice] = "Erdate was successfully watched."
         format.html
-        format.json { render :partial => "erdates/show.json" }
+        format.json { render :partial => "layouts/show.json" }
       else
         flash[:error] = "Erdate failed to be watched."
         format.html
-        format.json { render :partial => "erdates/show.json", status: :unprocessable_entity }
+        format.json { render :partial => "layouts/show.json", status: :unprocessable_entity }
       end
     end
   end
@@ -254,11 +255,11 @@ class ErdatesController < ApplicationController
       if @result
         flash[:notice] = "Erdate was successfully unwatched."
         format.html
-        format.json { render :partial => "erdates/show.json" }
+        format.json { render :partial => "layouts/show.json" }
       else
         flash[:error] = "Erdate failed to be unwatched."
         format.html
-        format.json { render :partial => "erdates/show.json", status: :unprocessable_entity }
+        format.json { render :partial => "layouts/show.json", status: :unprocessable_entity }
       end
     end
   end
@@ -320,16 +321,16 @@ class ErdatesController < ApplicationController
     beh = beatErHelper(userId, erdateId, true)
 
     @beat_misses = beh[:beat_misses]
-    @result = heh[:result]
+    @result = beh[:result]
     respond_to do |format|
       if @result
         flash[:notice] = "Erdate was successfully watched."
         format.html
-        format.json { render :partial => "erdates/show.json" }
+        format.json { render :partial => "layouts/show.json" }
       else
         flash[:error] = "Erdate failed to be watched."
         format.html
-        format.json { render :partial => "erdates/show.json", status: :unprocessable_entity }
+        format.json { render :partial => "layouts/show.json", status: :unprocessable_entity }
       end
     end
   end
@@ -346,11 +347,11 @@ class ErdatesController < ApplicationController
       if @result
         flash[:notice] = "Erdate was successfully watched."
         format.html
-        format.json { render :partial => "erdates/show.json" }
+        format.json { render :partial => "layouts/show.json" }
       else
         flash[:error] = "Erdate failed to be watched."
         format.html
-        format.json { render :partial => "erdates/show.json", status: :unprocessable_entity }
+        format.json { render :partial => "layouts/show.json", status: :unprocessable_entity }
       end
     end
   end
