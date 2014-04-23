@@ -45,7 +45,7 @@
       <file leaf-file-name="erdates_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/erdates_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="13" selection-start="2475" selection-end="2475" vertical-scroll-proportion="0.64006513" vertical-offset="1443" max-vertical-offset="7225">
+            <state line="109" column="34" selection-start="2523" selection-end="2523" vertical-scroll-proportion="0.66775244" vertical-offset="1443" max-vertical-offset="7225">
               <folding />
             </state>
           </provider>
@@ -1227,7 +1227,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/erdates_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="13" selection-start="2475" selection-end="2475" vertical-scroll-proportion="0.64006513" vertical-offset="1443" max-vertical-offset="7225">
+        <state line="109" column="34" selection-start="2523" selection-end="2523" vertical-scroll-proportion="0.66775244" vertical-offset="1443" max-vertical-offset="7225">
           <folding />
         </state>
       </provider>
