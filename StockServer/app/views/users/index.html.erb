@@ -15,7 +15,7 @@
       <td><%= "#{u.id}" %></td>
       <td><%= "#{u.email}" %></td>
       <td><%=  "#{u.authentication_token}" %></td>
-      <td><%= link_to 'Show', u %></td>
+      <td><%= link_to 'Show', u.profile %></td>
       <td><%= link_to 'Destroy', u, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
 <% end %>

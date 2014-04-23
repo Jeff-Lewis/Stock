@@ -17,6 +17,11 @@ class Api::V1::RegistrationsController < Devise::RegistrationsController
       @result = true
       @message = "Registered successfully"
       @data = current_user.to_json.html_safe()
+
+      profile = Profile.new()
+      profile.user = current_user
+      profile.username = params[:username]
+      profile.save()
     else
       clean_up_passwords resource
 

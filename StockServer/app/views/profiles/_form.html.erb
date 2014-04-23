@@ -1,0 +1,49 @@
+<%= form_for @profile, :html => {:multipart => true}  do |f| %>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% @profile.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label :avatar %><br />
+    <%= f.file_field :avatar %>
+  </div>
+  <div class="field">
+    <%= f.label :beat %><br />
+    <%= f.number_field :beat %>
+  </div>
+  <div class="field">
+    <%= f.label :miss %><br />
+    <%= f.number_field :miss %>
+  </div>
+  <div class="field">
+    <%= f.label :success %><br />
+    <%= f.number_field :success %>
+  </div>
+  <div class="field">
+    <%= f.label :failure %><br />
+    <%= f.number_field :failure %>
+  </div>
+  <div class="field">
+    <%= f.label :rank %><br />
+    <%= f.number_field :rank %>
+  </div>
+  <div class="field">
+    <%= f.label :bullism %><br />
+    <%= f.number_field :bullism %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

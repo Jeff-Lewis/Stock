@@ -1,4 +1,7 @@
 StockServer::Application.routes.draw do
+  resources :profiles
+
+
   resources :beat_misses
 
 

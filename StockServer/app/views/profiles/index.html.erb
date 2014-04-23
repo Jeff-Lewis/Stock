@@ -1,0 +1,37 @@
+<h1>Listing profiles</h1>
+
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Head</th>
+    <th>Beat</th>
+    <th>Miss</th>
+    <th>Success</th>
+    <th>Failure</th>
+    <th>Rank</th>
+    <th>Bullism</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @profiles.each do |profile| %>
+  <tr>
+    <td><%= profile.username %></td>
+    <td><%= image_tag profile.avatar.url(:thumb) %></td>
+    <td><%= profile.beat %></td>
+    <td><%= profile.miss %></td>
+    <td><%= profile.success %></td>
+    <td><%= profile.failure %></td>
+    <td><%= profile.rank %></td>
+    <td><%= profile.bullism %></td>
+    <td><%= link_to 'Show', profile %></td>
+    <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+    <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Profile', new_profile_path %>

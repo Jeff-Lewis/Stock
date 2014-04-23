@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Username:</b>
+  <%= @profile.username %>
+</p>
+
+<p>
+  <b>Head:</b>
+  <%= image_tag @profile.avatar.url(:square) %>
+</p>
+
+<p>
+  <b>Beat:</b>
+  <%= @profile.beat %>
+</p>
+
+<p>
+  <b>Miss:</b>
+  <%= @profile.miss %>
+</p>
+
+<p>
+  <b>Success:</b>
+  <%= @profile.success %>
+</p>
+
+<p>
+  <b>Failure:</b>
+  <%= @profile.failure %>
+</p>
+
+<p>
+  <b>Rank:</b>
+  <%= @profile.rank %>
+</p>
+
+<p>
+  <b>Bullism:</b>
+  <%= @profile.bullism %>
+</p>
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>

@@ -24,6 +24,19 @@ StockServer::Application.configure do
   config.action_mailer.default_url_options = { host: 'stock-earning-cal.herokuapp.com' }
   config.assets.initialize_on_precompile = false
 
+
+  #s3
+  config.paperclip_defaults = {
+      :storage => :s3,
+      :s3_credentials => {
+          :bucket => ENV['AWS_BUCKET'],
+          :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+          :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+      },
+      :default_url => '/media/images/default/:style/missing_default.jpeg',
+      :path => "/media/images/:class/:attachment/:id_partition/:style/:filename"
+  }
+
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 

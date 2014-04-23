@@ -105,9 +105,10 @@ class ErdatesController < ApplicationController
   end
 
   def parse
-    100.times do |n|
-      #time = Time.now - 101.day + n.day
-      time = Time.strptime('20140221', '%Y%m%d') + n.day
+    days = params[:num]
+    days.times do |n|
+      time = Time.now - (days / 2.0).to_i.day + n.day
+      #time = Time.strptime('20140221', '%Y%m%d') + n.day
       puts time.strftime('%Y%m%d')
 
       sleep(1)

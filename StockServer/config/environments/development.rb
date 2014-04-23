@@ -37,4 +37,17 @@ StockServer::Application.configure do
 
   # devise
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
+
+
+  #s3
+  config.paperclip_defaults = {
+      :storage => :s3,
+      :s3_credentials => {
+          :bucket => 'stock-earning-cal',
+          :access_key_id => 'AKIAJCOVTSEJRI5KNVVQ',
+          :secret_access_key => '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'
+      },
+      :default_url => '/media/images/default/:style/missing_default.jpeg',
+      :path => "/media/images/:class/:attachment/:id_partition/:style/:filename"
+  }
 end

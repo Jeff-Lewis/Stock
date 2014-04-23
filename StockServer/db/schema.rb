@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140420205825) do
+ActiveRecord::Schema.define(:version => 20140423053910) do
 
   create_table "beat_misses", :force => true do |t|
     t.integer  "erdate_id"
@@ -65,6 +65,23 @@ ActiveRecord::Schema.define(:version => 20140420205825) do
     t.integer  "trend",      :default => 0
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
+  end
+
+  create_table "profiles", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "username",            :default => "Too lazy to have a name"
+    t.integer  "beat",                :default => 0
+    t.integer  "miss",                :default => 0
+    t.integer  "success",             :default => 0
+    t.integer  "failure",             :default => 0
+    t.integer  "rank",                :default => 0
+    t.integer  "bullism",             :default => 1
+    t.datetime "created_at",                                                 :null => false
+    t.datetime "updated_at",                                                 :null => false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "stocks", :force => true do |t|

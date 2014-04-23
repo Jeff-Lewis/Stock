@@ -23,6 +23,8 @@ class User < ActiveRecord::Base
 
   has_many :beat_misses, :dependent => :destroy
 
+  has_one :profile, :dependent => :destroy
+
   def following?(other_user)
     relationships.where(followee_id: other_user.id).present?
   end
