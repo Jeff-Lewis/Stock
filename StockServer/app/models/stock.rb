@@ -4,6 +4,7 @@ class Stock < ActiveRecord::Base
   has_one :popularity, dependent: :destroy
   has_one :detail, dependent: :destroy
   has_many :erdates, dependent: :destroy
+  has_many :tweets, dependent: :destroy
 
   belongs_to :exchange
 

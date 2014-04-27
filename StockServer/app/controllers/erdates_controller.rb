@@ -278,7 +278,8 @@ class ErdatesController < ApplicationController
   def getPreviousErs
     date = params[:date]
     userId = params[:userId]
-    num = params[:num].to_i() || 7
+    num = params[:num] || 7
+    num = num.to_i()
 
     begin
 
@@ -303,7 +304,8 @@ class ErdatesController < ApplicationController
   def getNextErs
     date = params[:date]
     userId = params[:userId]
-    num = params[:num].to_i() || 7
+    num = params[:num] || 7
+    num = num.to_i()
 
     begin
 

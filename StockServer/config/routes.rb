@@ -1,4 +1,7 @@
 StockServer::Application.routes.draw do
+  resources :tweets
+
+
   resources :profiles
 
 
@@ -39,6 +42,14 @@ StockServer::Application.routes.draw do
   match 'retrieve' => 'details#retrieve'
 
   match 'getErsByStock' => 'erdates#indexByStock'
+
+  match 'getNextTweetsByStock' => 'tweets#getNextTweetsByStock'
+  match 'getPreviousTweetsByStock' => 'tweets#getPreviousTweetsByStock'
+  match 'getNextTweetsByEr' => 'tweets#getNextTweetsByEr'
+  match 'getPreviousTweetsByEr' => 'tweets#getPreviousTweetsByEr'
+
+  post 'createTweetByStock' => 'tweets#createTweetByStock'
+  post 'createTweetByEr' => 'tweets#createTweetByEr'
 
   namespace :api do
     namespace :v1 do
