@@ -1,0 +1,16 @@
+{
+    "status": "<%= @result %>",
+    "message": "<%= @message %>",
+    "data":
+[
+    <% @tweets.each_with_index do |tweet,index| %>
+    {
+        "tweet": <%= tweet.to_json().html_safe() %>,
+        "profile": <%= tweet.user.profile.to_json().html_safe() %>
+    }
+    <% unless index== @tweets.count - 1%>
+    ,
+    <% end %>
+    <% end %>
+]
+}

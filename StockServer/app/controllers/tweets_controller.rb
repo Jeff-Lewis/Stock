@@ -96,7 +96,7 @@ class TweetsController < ApplicationController
         @message = "Tweets were successfully retrieved."
         @data = @tweets.to_json.html_safe
         format.html
-        format.json { render :partial => "layouts/show.json" }
+        format.json { render :partial => "tweets/getTweets.json" }
       else
         flash[:error] = "Tweets failed to be retrieved."
         @message = "Tweets failed to be retrieved."
@@ -130,9 +130,6 @@ class TweetsController < ApplicationController
     @tweets = []
 
     begin
-      puts num
-      puts Tweet.where('created_at > ? and erdate_id = ?', DateTime.strptime(date, '%Y%m%d %H%M%S').utc.iso8601, erdateId).order('created_at desc').limit(num).to_json
-
       @tweets = Tweet.where(query,
                             DateTime.strptime(date, '%Y%m%d %H%M%S').utc.iso8601,
                             erdateId).order('created_at desc').limit(num)
@@ -147,9 +144,8 @@ class TweetsController < ApplicationController
       if @result
         flash[:notice] = "Tweets were successfully retrieved."
         @message = "Tweets were successfully retrieved."
-        @data = @tweets.to_json.html_safe
         format.html
-        format.json { render :partial => "layouts/show.json" }
+        format.json { render :partial => "tweets/getTweets.json" }
       else
         flash[:error] = "Tweets failed to be retrieved."
         @message = "Tweets failed to be retrieved."
