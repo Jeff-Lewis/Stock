@@ -38,6 +38,8 @@ StockServer::Application.routes.draw do
 
   match 'retrieve' => 'details#retrieve'
 
+  match 'getErsByStock' => 'erdates#indexByStock'
+
   namespace :api do
     namespace :v1 do
       devise_scope :user do

@@ -18,6 +18,16 @@ class ErdatesController < ApplicationController
     end
   end
 
+  def indexByStock
+    @stock = Stock.find(params[:stockId])
+    @erdates = Erdate.find_all_by_stock_id(params[:stockId])
+
+    respond_to do |format|
+      format.html # indexByStock.html.erb
+      format.json { render json: @erdates }
+    end
+  end
+
   # GET /erdates/1
   # GET /erdates/1.json
   def show

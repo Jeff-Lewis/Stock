@@ -10,6 +10,7 @@
   <%= @stock.symbol %>
 </p>
 
-
+<%= link_to 'Detail', @stock.detail %>
+<%= link_to 'Erdates', {:controller => "erdates", :action => "indexByStock", :stockId => @stock.id } %>
 <%= link_to 'Edit', edit_stock_path(@stock) %> |
 <%= link_to 'Back', stocks_path %>
