@@ -337,11 +337,11 @@ class ErdatesController < ApplicationController
     @result = beh[:result]
     respond_to do |format|
       if @result
-        flash[:notice] = "Erdate was successfully watched."
+        flash[:notice] = "Erdate was successfully beated."
         format.html
         format.json { render :partial => "layouts/show.json" }
       else
-        flash[:error] = "Erdate failed to be watched."
+        flash[:error] = "Erdate failed to be beated."
         format.html
         format.json { render :partial => "layouts/show.json", status: :unprocessable_entity }
       end
@@ -355,14 +355,14 @@ class ErdatesController < ApplicationController
     beh = beatErHelper(userId, erdateId, false)
 
     @beat_misses = beh[:beat_misses]
-    @result = heh[:result]
+    @result = beh[:result]
     respond_to do |format|
       if @result
-        flash[:notice] = "Erdate was successfully watched."
+        flash[:notice] = "Erdate was successfully missed."
         format.html
         format.json { render :partial => "layouts/show.json" }
       else
-        flash[:error] = "Erdate failed to be watched."
+        flash[:error] = "Erdate failed to be missed."
         format.html
         format.json { render :partial => "layouts/show.json", status: :unprocessable_entity }
       end
@@ -388,7 +388,7 @@ class ErdatesController < ApplicationController
 
       rescue
         puts "Error #{$!}"
-        puts userId + " watch " + erdateId
+        puts userId + " beat/miss " + erdateId
       end
     end
 

@@ -13,7 +13,7 @@ class Api::V1::SessionsController < Devise::SessionsController
     @message = "Logged in"
     current_user.ensure_authentication_token
     current_user.save()
-    @data = current_user.to_json().html_safe
+    @data = current_user.to_json(:include => :profile).html_safe
 
     render :partial => "layouts/show.json"
   end

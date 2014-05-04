@@ -59,14 +59,14 @@ class TweetsController < ApplicationController
   def getNextTweetsByStock
     stockId = params[:stockId]
     date = params[:date]
-    num = params[:num].to_i() || 30
+    num = params[:num] || 30
     getTweetsByStockHelper 'created_at > ? and stock_id = ?', stockId, date, num
   end
 
   def getPreviousTweetsByStock
     stockId = params[:stockId]
     date = params[:date]
-    num = params[:num].to_i() || 30
+    num = params[:num] || 30
     getTweetsByStockHelper 'created_at < ? and stock_id = ?', stockId, date, num
   end
 
