@@ -21,6 +21,7 @@ class Api::V1::RegistrationsController < Devise::RegistrationsController
       profile = Profile.new()
       profile.user = current_user
       profile.username = params[:username]
+      profile.bullism = params[:bullism]
       profile.save()
     else
       clean_up_passwords resource

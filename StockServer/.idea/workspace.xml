@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3a005df-009e-4ac2-83df-73a3078fa34d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/erdates_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/erdates_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/api/v1/sessions_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/api/v1/sessions_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/tweets_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/tweets_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/api/v1/registrations_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/api/v1/registrations_controller.rb" />
     </list>
     <ignored path="StockServer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,10 +33,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="erdates_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="erdates_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/erdates_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="356" column="33" selection-start="8902" selection-end="8902" vertical-scroll-proportion="0.3017857" vertical-offset="5883" max-vertical-offset="7429">
+            <state line="356" column="33" selection-start="8902" selection-end="8902" vertical-scroll-proportion="-3.0727272" vertical-offset="5883" max-vertical-offset="7429">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registrations_controller.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/registrations_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="14" selection-start="657" selection-end="657" vertical-scroll-proportion="0.63577235" vertical-offset="0" max-vertical-offset="697">
               <folding />
             </state>
           </provider>
@@ -103,15 +109,6 @@
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_show.json.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="67" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_getErs.json.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/erdates/_getErs.json.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="384" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
               <folding />
             </state>
           </provider>
@@ -181,7 +178,6 @@
         <option value="$PROJECT_DIR$/config/environments/development.rb" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
         <option value="$PROJECT_DIR$/app/models/profile.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/api/v1/registrations_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
         <option value="$PROJECT_DIR$/config/initializers/paperclip.rb" />
         <option value="$PROJECT_DIR$/app/views/profiles/index.html.erb" />
@@ -199,6 +195,7 @@
         <option value="$PROJECT_DIR$/app/controllers/tweets_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/api/v1/sessions_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/erdates_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/api/v1/registrations_controller.rb" />
       </list>
     </option>
   </component>
@@ -857,7 +854,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="1" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32983193" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -973,11 +970,6 @@
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state line="40" column="24" selection-start="768" selection-end="768" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1071" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/registrations_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="6" selection-start="649" selection-end="649" vertical-scroll-proportion="0.0" vertical-offset="66" max-vertical-offset="680" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/initializers/paperclip.rb">
@@ -1139,13 +1131,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/profile.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="107" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/sessions_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="5" selection-start="588" selection-end="588" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
@@ -1176,7 +1161,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/erdates_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="356" column="33" selection-start="8902" selection-end="8902" vertical-scroll-proportion="0.3017857" vertical-offset="5883" max-vertical-offset="7429">
+        <state line="356" column="33" selection-start="8902" selection-end="8902" vertical-scroll-proportion="-3.0727272" vertical-offset="5883" max-vertical-offset="7429">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/profile.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="107" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/registrations_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="14" selection-start="657" selection-end="657" vertical-scroll-proportion="0.63577235" vertical-offset="0" max-vertical-offset="697">
           <folding />
         </state>
       </provider>
