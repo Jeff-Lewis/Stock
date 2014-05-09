@@ -317,7 +317,7 @@ class ErdatesController < ApplicationController
                                    DateTime.strptime(date, '%Y%m%d') + num.days).order('datetime asc')
 
       @erdates.each do |erdate|
-        erdate.initialize!
+        erdate.initBeatMissCnt
       end
 
     rescue

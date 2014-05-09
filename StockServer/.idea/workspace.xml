@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3a005df-009e-4ac2-83df-73a3078fa34d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/stocks/_getStock.json.erb" afterPath="$PROJECT_DIR$/app/views/stocks/_getStock.json.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/erdate.rb" afterPath="$PROJECT_DIR$/app/models/erdate.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/erdates_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/erdates_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/erdates_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/erdates_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/stocks_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/stocks_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/stocks_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/stocks_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
     </list>
     <ignored path="StockServer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,16 +37,16 @@
       <file leaf-file-name="erdates_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/erdates_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="158" column="23" selection-start="4072" selection-end="4072" vertical-scroll-proportion="0.0" vertical-offset="5572" max-vertical-offset="7514">
+            <state line="319" column="30" selection-start="7920" selection-end="7935" vertical-scroll-proportion="0.0" vertical-offset="5062" max-vertical-offset="7514">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="erdate.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="erdate.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/erdate.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="17" selection-start="355" selection-end="355" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
+            <state line="13" column="22" selection-start="324" selection-end="324" vertical-scroll-proportion="0.35876623" vertical-offset="0" max-vertical-offset="616">
               <folding />
             </state>
           </provider>
@@ -120,10 +115,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="user.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/user.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="11" selection-start="1746" selection-end="1746" vertical-scroll-proportion="0.6964286" vertical-offset="625" max-vertical-offset="2074">
+            <state line="62" column="11" selection-start="1746" selection-end="1746" vertical-scroll-proportion="0.0" vertical-offset="625" max-vertical-offset="2074">
               <folding />
             </state>
           </provider>
@@ -197,11 +192,11 @@
         <option value="$PROJECT_DIR$/app/models/profile.rb" />
         <option value="$PROJECT_DIR$/app/controllers/stocks_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/stocks/_getStock.json.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/erdates_controller.rb" />
-        <option value="$PROJECT_DIR$/app/models/erdate.rb" />
         <option value="$PROJECT_DIR$/app/helpers/stocks_helper.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/app/helpers/erdates_helper.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/erdates_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/erdate.rb" />
       </list>
     </option>
   </component>
@@ -1221,23 +1216,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/erdate.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="17" selection-start="355" selection-end="355" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/stocks_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="70" column="35" selection-start="1539" selection-end="1539" vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="2006">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/erdates_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="158" column="23" selection-start="4072" selection-end="4072" vertical-scroll-proportion="0.0" vertical-offset="5572" max-vertical-offset="7514">
           <folding />
         </state>
       </provider>
@@ -1258,7 +1239,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="11" selection-start="1746" selection-end="1746" vertical-scroll-proportion="0.6964286" vertical-offset="625" max-vertical-offset="2074">
+        <state line="62" column="11" selection-start="1746" selection-end="1746" vertical-scroll-proportion="0.0" vertical-offset="625" max-vertical-offset="2074">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/erdates_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="319" column="30" selection-start="7920" selection-end="7935" vertical-scroll-proportion="0.0" vertical-offset="5062" max-vertical-offset="7514">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/erdate.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="22" selection-start="324" selection-end="324" vertical-scroll-proportion="0.35876623" vertical-offset="0" max-vertical-offset="616">
           <folding />
         </state>
       </provider>

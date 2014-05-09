@@ -7,23 +7,23 @@ class Erdate < ActiveRecord::Base
   has_many :tweets
 
   def isClosed?
-    return is_closed == 1
+    return self.is_closed == 1
   end
 
   def close!
-    is_closed = 1
-    this.save()
+    self.is_closed = 1
+    self.save!
   end
 
-  def initialize!
-    if beat_cnt.nil?
-      beat_cnt = 10 + rand(100)
-      this.save()
+  def initBeatMissCnt
+    if self.beat_cnt.nil?
+      self.beat_cnt = 10 + rand(100)
+      self.save!
     end
 
-    if miss_cnt.nil?
-      miss_cnt = 10 + rand(100)
-      this.save()
+    if self.miss_cnt.nil?
+      self.miss_cnt = 10 + rand(100)
+      self.save!
     end
   end
 end
