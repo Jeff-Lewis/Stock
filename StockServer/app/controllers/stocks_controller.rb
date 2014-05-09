@@ -53,6 +53,33 @@ class StocksController < ApplicationController
     end
   end
 
+  def getStockBySymbol
+    @stock = nil
+    begin
+      @stock = Stock.find_by_symbol(params[:symbol].upcase)
+      puts @stock
+    rescue
+      puts "Error #{$!}"
+      puts "Get stock = " + params[:symbol]
+    end
+
+    @result = false
+    @user = current_user
+    if !@stock.nil?
+      @result = true
+    end
+    respond_to do |format|
+      if @result
+        format.html { redirect_to @stock, notice: 'Stock was successfully showed.' }
+        format.json { render :partial => "getStock.json"}
+      else
+        flash[:error] = "Stock failed to be showed."
+        format.html
+        format.json { render :partial => "layouts/show.json", status: :unprocessable_entity }
+      end
+    end
+  end
+
   # PUT /stocks/1
   # PUT /stocks/1.json
   def update

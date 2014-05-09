@@ -315,6 +315,10 @@ class ErdatesController < ApplicationController
                                    DateTime.strptime(date, '%Y%m%d'),
                                    DateTime.strptime(date, '%Y%m%d') + num.days).order('datetime asc')
 
+      @erdates.each do |erdate|
+        erdate.initialize!
+      end
+
     rescue
       puts "Error #{$!}"
       puts date

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140427194302) do
+ActiveRecord::Schema.define(:version => 20140509032937) do
 
   create_table "beat_misses", :force => true do |t|
     t.integer  "erdate_id"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20140427194302) do
     t.datetime "updated_at",                  :null => false
     t.integer  "beat_cnt"
     t.integer  "miss_cnt"
+    t.integer  "is_closed",  :default => 0
   end
 
   create_table "erdates_users", :force => true do |t|

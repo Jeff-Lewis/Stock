@@ -4,7 +4,8 @@
         "erdate": <%= erdate.to_json().html_safe() %>,
         "stock": <%= erdate.stock.to_json().html_safe() %>,
         "popularity": <%= erdate.stock.popularity.to_json().html_safe() %>,
-        "watch": "<%= watch?(@user, erdate) %>"
+        "watch": "<%= watch?(@user, erdate) %>",
+        "beat": "<%= beat?(@user, erdate) %>"
     }
     <% unless index== @erdates.count - 1%>
     ,

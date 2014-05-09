@@ -1,0 +1,10 @@
+{
+    "status": "<%= @result %>",
+    "detail": <%= @stock.detail.to_json().html_safe() %>,
+    "exchange": "<%= @stock.exchange.name %>",
+    "popularity": <%= @stock.popularity.to_json().html_safe() %>,
+    "erdates": <%= @stock.erdates.to_json().html_safe() %>,
+    "stock": <%= @stock.to_json(:methods => :nearestErdate).html_safe() %>,
+    "watch": "<%= watch?(@user, @stock.nearestErdate) %>",
+    "beat": "<%= beat?(@user, @stock.nearestErdate) %>"
+}

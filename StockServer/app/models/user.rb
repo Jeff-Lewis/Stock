@@ -40,7 +40,7 @@ class User < ActiveRecord::Base
   end
 
   def watchEr?(erdate)
-    erdates.where(:id => erdate.id).present?
+    erdates.where(:id => erdate.object_id).present?
   end
 
   def watchEr!(erdate)
@@ -56,7 +56,7 @@ class User < ActiveRecord::Base
   end
 
   def beatEr?(erdate)
-    beat_misses.where(:erdate_id => erdate.id).present?
+    beat_misses.where(:erdate_id => erdate.object_id).present?
   end
 
   def beatEr!(erdate)
@@ -93,6 +93,10 @@ class User < ActiveRecord::Base
     if authentication_token.blank?
       self.authentication_token = generate_authentication_token
     end
+  end
+
+  def as_json(options=nil)
+    super(:include => [:profile => { :methods => :imageUrl }])
   end
 
   private

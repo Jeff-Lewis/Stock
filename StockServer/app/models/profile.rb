@@ -12,6 +12,11 @@ class Profile < ActiveRecord::Base
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   belongs_to :user
 
+  def imageUrl
+    #URI(request.url) + this.attachment_name.url
+    ActionController::Base.helpers.image_path avatar.url(:thumb)
+  end
+
   private
 
   def default_url_by_bullism
