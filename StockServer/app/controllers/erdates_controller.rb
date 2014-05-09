@@ -194,7 +194,7 @@ class ErdatesController < ApplicationController
   end
 
   def watchEr
-    userId = params[:userId]
+    userId = current_user.id
     erdateId = params[:erdateId]
 
     @result = false
@@ -235,7 +235,7 @@ class ErdatesController < ApplicationController
   end
 
   def unwatchEr
-    userId = params[:userId]
+    userId = current_user.id
     erdateId = params[:erdateId]
 
     @result = false
@@ -277,7 +277,7 @@ class ErdatesController < ApplicationController
 
   def getPreviousErs
     date = params[:date]
-    userId = params[:userId]
+    userId = current_user.id
     num = params[:num] || 7
     num = num.to_i()
 
@@ -303,10 +303,11 @@ class ErdatesController < ApplicationController
 
   def getNextErs
     date = params[:date]
-    userId = params[:userId]
+    userId = current_user.id
     num = params[:num] || 7
     num = num.to_i()
 
+    @erdates = []
     begin
 
       @user = User.find(userId)
@@ -332,7 +333,7 @@ class ErdatesController < ApplicationController
   end
 
   def beatEr
-    userId = params[:userId]
+    userId = current_user.id
     erdateId = params[:erdateId]
 
     beh = beatErHelper(userId, erdateId, true)
@@ -353,7 +354,7 @@ class ErdatesController < ApplicationController
   end
 
   def missEr
-    userId = params[:userId]
+    userId = current_user.id
     erdateId = params[:erdateId]
 
     beh = beatErHelper(userId, erdateId, false)

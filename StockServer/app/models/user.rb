@@ -40,7 +40,10 @@ class User < ActiveRecord::Base
   end
 
   def watchEr?(erdate)
-    erdates.where(:id => erdate.object_id).present?
+    if erdate.nil?
+      false
+    end
+    erdates.where(:id => erdate.id).present?
   end
 
   def watchEr!(erdate)
@@ -56,7 +59,10 @@ class User < ActiveRecord::Base
   end
 
   def beatEr?(erdate)
-    beat_misses.where(:erdate_id => erdate.object_id).present?
+    if erdate.nil?
+      false
+    end
+    beat_misses.where(:erdate_id => erdate.id).present?
   end
 
   def beatEr!(erdate)

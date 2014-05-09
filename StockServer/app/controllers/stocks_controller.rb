@@ -67,6 +67,8 @@ class StocksController < ApplicationController
     @user = current_user
     if !@stock.nil?
       @result = true
+    else
+      @message = "symbol not found!"
     end
     respond_to do |format|
       if @result

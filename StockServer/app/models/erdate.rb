@@ -15,7 +15,7 @@ class Erdate < ActiveRecord::Base
     this.save()
   end
 
-  def initialize
+  def initialize!
     if beat_cnt.nil?
       beat_cnt = 10 + rand(100)
       this.save()
