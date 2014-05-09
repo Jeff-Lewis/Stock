@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3a005df-009e-4ac2-83df-73a3078fa34d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/erdate.rb" afterPath="$PROJECT_DIR$/app/models/erdate.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/erdates_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/erdates_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
     </list>
     <ignored path="StockServer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,19 +42,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="erdate.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="erdate.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/erdate.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="22" selection-start="324" selection-end="324" vertical-scroll-proportion="0.35876623" vertical-offset="0" max-vertical-offset="616">
+            <state line="13" column="22" selection-start="324" selection-end="324" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="registrations_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/registrations_controller.rb">
+      <file leaf-file-name="routes.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="14" selection-start="657" selection-end="657" vertical-scroll-proportion="0.0" vertical-offset="81" max-vertical-offset="697">
+            <state line="49" column="7" selection-start="1248" selection-end="1248" vertical-scroll-proportion="0.66233766" vertical-offset="425" max-vertical-offset="2159">
               <folding />
             </state>
           </provider>
@@ -185,7 +184,6 @@
         <option value="$PROJECT_DIR$/app/controllers/api/v1/registrations_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/details_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/erdates/_getErs.json.erb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20140509032937_add_is_closed_to_erdates.rb" />
         <option value="$PROJECT_DIR$/app/models/stock.rb" />
         <option value="$PROJECT_DIR$/app/controllers/api/v1/sessions_controller.rb" />
@@ -197,6 +195,7 @@
         <option value="$PROJECT_DIR$/app/helpers/erdates_helper.rb" />
         <option value="$PROJECT_DIR$/app/controllers/erdates_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/erdate.rb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
       </list>
     </option>
   </component>
@@ -306,6 +305,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="StockServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StockServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StockServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1085,13 +1098,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="54" selection-start="1299" selection-end="1299" vertical-scroll-proportion="0.66341466" vertical-offset="425" max-vertical-offset="2159">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140423053910_add_avatar_to_profiles.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="40" selection-start="167" selection-end="167" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
@@ -1253,7 +1259,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/erdate.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="22" selection-start="324" selection-end="324" vertical-scroll-proportion="0.35876623" vertical-offset="0" max-vertical-offset="616">
+        <state line="13" column="22" selection-start="324" selection-end="324" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="7" selection-start="1248" selection-end="1248" vertical-scroll-proportion="0.66233766" vertical-offset="425" max-vertical-offset="2159">
           <folding />
         </state>
       </provider>

@@ -34,10 +34,10 @@ StockServer::Application.routes.draw do
   match 'parseErEst' => 'erdates#parseErEst'
   match 'getNextErs' => 'erdates#getNextErs'
   match 'getPreviousErs' => 'erdates#getPreviousErs'
-  match 'watchEr' => 'erdates#watchEr'
-  match 'unwatchEr' => 'erdates#unwatchEr'
-  match 'beatEr' => 'erdates#beatEr'
-  match 'missEr' => 'erdates#missEr'
+  post 'watchEr' => 'erdates#watchEr'
+  post 'unwatchEr' => 'erdates#unwatchEr'
+  post 'beatEr' => 'erdates#beatEr'
+  post 'missEr' => 'erdates#missEr'
 
   match 'retrieve' => 'details#retrieve'
 
