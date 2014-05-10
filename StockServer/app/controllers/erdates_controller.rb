@@ -12,6 +12,9 @@ class ErdatesController < ApplicationController
   def index
     @erdates = Erdate.all
 
+    #TODO
+    @erdates = @erdates.select{ |erdate| erdate.usStock? }
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @erdates }
@@ -289,6 +292,9 @@ class ErdatesController < ApplicationController
                               DateTime.strptime(date, '%Y%m%d'),
                               DateTime.strptime(date, '%Y%m%d') - num.days).order('datetime asc')
 
+      #TODO
+      @erdates = @erdates.select{ |erdate| erdate.usStock? }
+
     rescue
       puts "Error #{$!}"
       puts date + " user: " + userId
@@ -315,6 +321,9 @@ class ErdatesController < ApplicationController
       @erdates = Erdate.where('datetime >= ? and datetime <= ?',
                                    DateTime.strptime(date, '%Y%m%d'),
                                    DateTime.strptime(date, '%Y%m%d') + num.days).order('datetime asc')
+
+      #TODO
+      @erdates = @erdates.select{ |erdate| erdate.usStock? }
 
       @erdates.each do |erdate|
         erdate.initBeatMissCnt

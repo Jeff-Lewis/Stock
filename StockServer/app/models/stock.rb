@@ -18,4 +18,12 @@ class Stock < ActiveRecord::Base
       ers.first
     end
   end
+
+  def usStock?
+    begin
+      self.exchange.usStock?
+    rescue
+      false
+    end
+  end
 end

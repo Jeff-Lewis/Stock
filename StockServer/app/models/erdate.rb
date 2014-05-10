@@ -26,4 +26,8 @@ class Erdate < ActiveRecord::Base
       self.save!
     end
   end
+
+  def usStock?
+    self.stock.usStock?
+  end
 end
