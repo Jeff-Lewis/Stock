@@ -43,11 +43,14 @@ StockServer::Application.routes.draw do
 
   match 'getErsByStock' => 'erdates#indexByStock'
 
+  match 'getNextTweetsByUser' => 'tweets#getNextTweetsByUser'
+  match 'getPreviousTweetsByUser' => 'tweets#getPreviousTweetsByUser'
   match 'getNextTweetsByStock' => 'tweets#getNextTweetsByStock'
   match 'getPreviousTweetsByStock' => 'tweets#getPreviousTweetsByStock'
   match 'getNextTweetsByEr' => 'tweets#getNextTweetsByEr'
   match 'getPreviousTweetsByEr' => 'tweets#getPreviousTweetsByEr'
   match 'getStockBySymbol' => 'stocks#getStockBySymbol'
+  match 'getStocksByUser' => 'stocks#getStocksByUser'
 
   post 'createTweetByStock' => 'tweets#createTweetByStock'
   post 'createTweetByEr' => 'tweets#createTweetByEr'

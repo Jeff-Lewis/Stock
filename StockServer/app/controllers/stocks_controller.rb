@@ -10,6 +10,17 @@ class StocksController < ApplicationController
     end
   end
 
+  # GET /stocks
+  # GET /stocks.json
+  def getStocksByUser
+    @stocks = current_user.stocks
+
+    respond_to do |format|
+      format.html { render :partial => "stocks"}
+      format.json { render json: @stocks }
+    end
+  end
+
   # GET /stocks/1
   # GET /stocks/1.json
   def show

@@ -49,6 +49,10 @@ class User < ActiveRecord::Base
   def watchEr!(erdate)
     if (!watchEr?(erdate))
       erdates << erdate
+
+      unless (self.stocks.include? erdate.stock)
+        self.stocks << erdate.stock
+      end
     end
   end
 

@@ -1,0 +1,36 @@
+<h1>Listing stocks</h1>
+
+<table>
+  <tr>
+    <th>NO.</th>
+    <th>Name</th>
+    <th>Symbol</th>
+    <th>Exchange</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @stocks.each_with_index do |stock, i| %>
+      <tr>
+        <td><%= (i+1) %></td>
+        <td><%= stock.name %></td>
+        <td><%= stock.symbol %></td>
+        <% if !stock.exchange.nil? %>
+            <td><%= stock.exchange.name %></td>
+        <% else %>
+            <td>N/A</td>
+        <% end %>
+        <td><%= link_to 'Show', stock %></td>
+        <td><%= link_to 'Detail', stock.detail %></td>
+        <td><%= link_to 'Erdates', {:controller => "erdates", :action => "indexByStock", :stockId => stock.id } %></td>
+        <td><%= link_to 'Edit', edit_stock_path(stock) %></td>
+        <td><%= link_to 'Destroy', stock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Stock', new_stock_path %>

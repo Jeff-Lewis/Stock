@@ -55,6 +55,19 @@ class TweetsController < ApplicationController
     end
   end
 
+  def getNextTweetsByUser
+    stocks = current_user.stocks
+    date = params[:date]
+    num = params[:num] || 30
+    getTweetsByStockHelper 'created_at > ? and stock_id in (?)', stocks, date, num
+  end
+
+  def getPreviousTweetsByUser
+    stocks = current_user.stocks
+    date = params[:date]
+    num = params[:num] || 30
+    getTweetsByStockHelper 'created_at < ? and stock_id in (?)', stocks, date, num
+  end
 
   def getNextTweetsByStock
     stockId = params[:stockId]
@@ -87,7 +100,7 @@ class TweetsController < ApplicationController
       @result = true
     rescue
       puts "Error #{$!}"
-      puts "get tweets by stock " + stockId
+      puts "get tweets by stock " + stockId.to_json
     end
 
     respond_to do |format|
