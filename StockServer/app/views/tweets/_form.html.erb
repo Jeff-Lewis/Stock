@@ -16,12 +16,16 @@
     <%= f.text_field :content %>
   </div>
   <div class="field">
-    <%= f.label :userId %><br />
-    <%= f.number_field :userId %>
+    <%= f.label :image %><br />
+    <%= f.file_field :image %>
   </div>
   <div class="field">
-    <%= f.label :stockId %><br />
-    <%= f.number_field :stockId %>
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :stock_id %><br />
+    <%= f.number_field :stock_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

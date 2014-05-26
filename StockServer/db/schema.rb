@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140509032937) do
+ActiveRecord::Schema.define(:version => 20140526195217) do
 
   create_table "beat_misses", :force => true do |t|
     t.integer  "erdate_id"
@@ -105,8 +105,12 @@ ActiveRecord::Schema.define(:version => 20140509032937) do
     t.integer  "user_id"
     t.integer  "stock_id"
     t.integer  "erdate_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "user_relationships", :force => true do |t|

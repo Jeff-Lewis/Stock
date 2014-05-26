@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Content</th>
+    <th>Image</th>
     <th>Userid</th>
     <th>Stockid</th>
     <th>Erdateid</th>
@@ -15,6 +16,7 @@
   <% @tweets.each do |tweet| %>
       <tr>
         <td><%= tweet.content %></td>
+        <td><%= image_tag tweet.image.url(:thumb) %></td>
         <td><%= link_to tweet.user_id, tweet.user.profile %></td>
         <td><%= link_to tweet.stock_id, tweet.stock %></td>
         <td><%= link_to tweet.erdate_id, tweet.erdate %></td>

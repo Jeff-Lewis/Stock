@@ -6,15 +6,24 @@
 </p>
 
 <p>
+  <b>Image:</b>
+  <%= image_tag @tweet.image.url(:medium) %>
+</p>
+
+<p>
   <b>Userid:</b>
-  <%= @tweet.userId %>
+  <%= @tweet.user_id %>
 </p>
 
 <p>
   <b>Stockid:</b>
-  <%= @tweet.stockId %>
+  <%= @tweet.stock_id %>
 </p>
 
+<p>
+  <b>erdateid:</b>
+  <%= @tweet.erdate_id %>
+</p>
 
 <%= link_to 'Edit', edit_tweet_path(@tweet) %> |
 <%= link_to 'Back', tweets_path %>
