@@ -1,0 +1,17 @@
+<Alloy>
+	<Window id="window">
+		<View id="wrapper">
+			<View id="meta">
+				<ImageView id="image" />
+				<Label id="name" />
+				<Label id="user" />
+			</View>
+			<Label id="text" />
+			<Label id="time" />
+		</View>
+		<TableView id="tableView">
+			<Widget id="ptr" src="nl.fokkezb.pullToRefresh" onRelease="myLoader" />
+	 		<Widget id="isComment" src="nl.fokkezb.infiniteScroll" onEnd="onEndCommentLoader" />
+ 		</TableView>
+	</Window>
+</Alloy>

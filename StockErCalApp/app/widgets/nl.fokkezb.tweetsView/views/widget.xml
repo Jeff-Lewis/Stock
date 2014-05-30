@@ -1,0 +1,6 @@
+<Alloy>
+ 	<TableView id="tableView">
+ 		<Widget id="ptr" src="nl.fokkezb.pullToRefresh" onRelease="myLoader" />
+ 		<Widget id="is" src="nl.fokkezb.infiniteScroll" onEnd="onEndLoader" />
+ 	</TableView>
+</Alloy>
