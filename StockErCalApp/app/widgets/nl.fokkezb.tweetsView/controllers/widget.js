@@ -1,3 +1,7 @@
+var logger = require('LogOperations');
+var tweetOperations = require('TweetOperations');
+var datetimeOperations = require('DatetimeOperations');
+
 var args = arguments[0] || {};
 
 var options = {
@@ -27,7 +31,7 @@ function doInit(opts) {
 		$.tableView.allowsSelection = false;
 	}
 
-	tweets = Widget.createCollection('tweet');
+	tweets = Alloy.createCollection('tweet');
 	tweets.fetch();
 
 	Ti.API.info("tweets: " + tweets.length);
@@ -217,27 +221,29 @@ if (args.q) {
 	doInit(args);
 }
 
-function myLoader(e) {
-	setTimeout(function() {
-		// request method here
-		Ti.API.info("loading");
+function addLatestTweets(tweets, e){
+	tweets.map(function(tweet){
+		data.unshift(Alloy.createWidget('nl.fokkezb.tweetsView', 'row', tweet).getView());
+	});
+	
+	$.tableView.setData(data);
 
-		var tempTweets = Widget.createCollection('tweet');
-		tempTweets.fetch();
-		var id = getRandomInt(1, 8);
-		Ti.API.info('add tweet ' + id);
-		tempTweets = tempTweets.filter(function(tweet) {
-			return tweet.get('id') == id;
-		});
-		tempTweets.map(function(tweet) {
-			data.unshift(Alloy.createWidget('nl.fokkezb.tweetsView', 'row', tweet).getView());
-		});
+	e.hide(); 
+}
 
-		$.tableView.setData(data);
-
-		e.hide();
-	}, 1000);
-
+function onPullLoader(e) {
+	Ti.API.info("loading");
+	
+	var latestUpdatedAt = "";
+	
+	if (data != null && data.length > 0){
+		var json = JSON.parse(data[0].data);
+		if (json.createdAt != null && json.createdAt != ""){
+			latestUpdatedAt = datetimeOperations.toServerDatetime(json.createdAt);
+		}
+	}
+	//TODO replace null with stock
+	tweetOperations.addLatestTweetsByStock(latestUpdatedAt, null, addLatestTweets, e); 
 }
 
 /**
@@ -248,28 +254,27 @@ function getRandomInt(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function addPreviousTweets(tweets, e){
+	tweets.map(function(tweet){
+		data.push(Alloy.createWidget('nl.fokkezb.tweetsView', 'row', tweet).getView());
+	});
+	
+	$.tableView.setData(data);
+
+	e.success(); 
+}
+
 function onEndLoader(e) {
-	setTimeout(function() {
-		// request method here
-		Ti.API.info("onEndLoading");
-
-		var tempTweets = Widget.createCollection('tweet');
-		tempTweets.fetch();
-		var id = getRandomInt(1, 8);
-		Ti.API.info('add tweet ' + id);
-		tempTweets = tempTweets.filter(function(tweet) {
-			return tweet.get('id') == id;
-		});
-		tempTweets.map(function(tweet) {
-			data.push(Alloy.createWidget('nl.fokkezb.tweetsView', 'row', tweet).getView());
-		});
-
-		$.tableView.setData(data);
-
-		e.success();
-
-	}, 1000);
-
+	Ti.API.info("onEndLoading");
+	
+	var latestUpdatedAt = "";
+	
+	if (data != null && data.length > 0){
+		var json = JSON.parse(data[data.length - 1].data);
+		latestUpdatedAt = datetimeOperations.toServerDatetime(json.createdAt);
+	}
+	//TODO replace null with stock
+	tweetOperations.addPreviousTweetsByStock(latestUpdatedAt, null, addPreviousTweets, e); 
 }
 
 exports.init = doInit;

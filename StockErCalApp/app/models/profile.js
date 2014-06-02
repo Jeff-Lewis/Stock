@@ -2,6 +2,7 @@ exports.definition = {
 	config: {
 		columns: {
 		    "id": "int",
+		    // "profileId": "int",
 		    "beat": "int",
 		    "miss": "int",
 		    "rank": "int",

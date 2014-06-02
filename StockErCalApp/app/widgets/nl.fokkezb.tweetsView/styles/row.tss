@@ -12,9 +12,20 @@
 	backgroundColor: '#fff'
 },
 
-'#image': {
+'#header': {
 	top: 10, left: 10,
 	width: 48, height: 48,
+	
+	preventDefaultImage: true,
+	
+	borderRadius: 3,
+	
+	backgrondColor: '#fff'
+},
+
+'#image': {
+	top: 60, left: 60,
+	width: 128, height: 128,
 	
 	preventDefaultImage: true,
 	

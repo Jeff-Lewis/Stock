@@ -2,6 +2,7 @@ exports.definition = {
 	config: {
 		columns: {
 		    "id": "int",
+		    // "tweetId": "int",
 		    "content": "string",
 		    "image": "string",
 		    "cmtCount": "int",

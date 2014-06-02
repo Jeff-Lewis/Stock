@@ -8,6 +8,7 @@ migration.up = function(migrator) {
         "columns":
         {
             "id": "integer",
+            // "profileId": "integer",
 		    "beat": "integer",
 		    "miss": "integer",
 		    "rank": "integer",

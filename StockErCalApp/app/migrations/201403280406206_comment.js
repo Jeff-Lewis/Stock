@@ -13,6 +13,7 @@ migration.up = function(migrator) {
         "columns":
         {
             "id": "integer",
+            // "commentId": "integer",
 		    "content": "text",
 		    "image": "text",
 		    "commentId": "integer",

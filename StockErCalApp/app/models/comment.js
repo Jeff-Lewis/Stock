@@ -2,6 +2,7 @@ exports.definition = {
 	config: {
 		columns: {
 		    "id": "int",
+		    // "commentId": "int",
 		    "content": "string",
 		    "image": "string",
 		    "tweetId": "int",

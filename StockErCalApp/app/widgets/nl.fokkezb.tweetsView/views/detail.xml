@@ -2,16 +2,14 @@
 	<Window id="window">
 		<View id="wrapper">
 			<View id="meta">
-				<ImageView id="image" />
+				<ImageView id="header" />
 				<Label id="name" />
-				<Label id="user" />
 			</View>
 			<Label id="text" />
+			<ImageView id="image" />
 			<Label id="time" />
 		</View>
 		<TableView id="tableView">
-			<Widget id="ptr" src="nl.fokkezb.pullToRefresh" onRelease="myLoader" />
-	 		<Widget id="isComment" src="nl.fokkezb.infiniteScroll" onEnd="onEndCommentLoader" />
  		</TableView>
 	</Window>
 </Alloy>

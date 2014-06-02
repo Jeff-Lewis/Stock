@@ -9,10 +9,9 @@
 	"min-alloy-version": "1.0",
 	"min-titanium-version":"2.1",
 	"tags":"",
-	"platforms":"ios",
+	"platforms":"android,ios",
 	"dependencies": {
 		"nl.fokkezb.pullToRefresh": "1.5.2",
-		"nl.fokkezb.browserView": "1.0",
 		"nl.fokkezb.infiniteScroll": "1.3.2"
 	}
 }

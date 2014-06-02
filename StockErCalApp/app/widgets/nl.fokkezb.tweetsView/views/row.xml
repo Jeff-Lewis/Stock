@@ -1,7 +1,8 @@
 <Alloy>
 	<TableViewRow id="row">
-		<ImageView id="image" />
+		<ImageView id="header" />
 		<Label id="name" />
+		<ImageView id="image" />
 		<Label id="time" />
 		<Label id="text" />
 	</TableViewRow>

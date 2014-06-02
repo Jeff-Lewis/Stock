@@ -1,6 +1,10 @@
 // TODO: Internationalization
+var logger = require('LogOperations');
+var profileOperations = require('ProfileOperations');
 
 var args = arguments[0] || {};
+// execute when created
+initial(args);
 
 // Based on: http://ejohn.org/blog/javascript-pretty-date/
 function prettyDate(time){
@@ -21,11 +25,20 @@ function prettyDate(time){
 		day_diff + " days";
 }
 
-Ti.API.info('image url = ' + args.get('image'));
+function displayProfile(profile){
+	$.name.text = profile.username;
+	$.header.image = profile.avatar;
+}
 
-$.image.image = args.get('image');
-$.name.text = args.get('userId');
-$.time.text = prettyDate(args.get('createdAt').toString());
-$.text.text = args.get('content');
-$.row.data = JSON.stringify(args);
-Ti.API.info('tweet row loaded');
+function initial(args){
+	Ti.API.info('image url = ' + args.get('image'));
+	$.image.image = args.get('image');
+	
+	var userId = args.get('userId');
+	profileOperations.getProfileByUserId(userId, displayProfile);
+	
+	$.time.text = prettyDate(args.get('createdAt').toString());
+	$.text.text = args.get('content');
+	$.row.data = JSON.stringify(args);
+	Ti.API.info('tweet row loaded');
+}
