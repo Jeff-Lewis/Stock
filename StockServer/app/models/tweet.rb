@@ -17,11 +17,23 @@ class Tweet < ActiveRecord::Base
 
   def mediumImageUrl
     #URI(request.url) + this.attachment_name.url
-    ActionController::Base.helpers.image_path image.url(:medium)
+    if image.url(:medium).include? "missing"
+      ""
+    else
+      ActionController::Base.helpers.image_path image.url(:medium)
+    end
   end
 
   def largeImageUrl
     #URI(request.url) + this.attachment_name.url
-    ActionController::Base.helpers.image_path image.url(:large)
+    if image.url(:large).include? "missing"
+      ""
+    else
+      ActionController::Base.helpers.image_path image.url(:large)
+    end
+  end
+
+  def as_json(options=nil)
+    super(:methods => :mediumImageUrl)
   end
 end

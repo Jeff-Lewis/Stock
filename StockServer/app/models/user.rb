@@ -106,7 +106,7 @@ class User < ActiveRecord::Base
   end
 
   def as_json(options=nil)
-    super(:include => [:profile => { :methods => :imageUrl }])
+    super(:include => [:profile])
   end
 
   private

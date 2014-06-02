@@ -17,6 +17,10 @@ class Profile < ActiveRecord::Base
     ActionController::Base.helpers.image_path avatar.url(:thumb)
   end
 
+  def as_json(options=nil)
+    super(:methods => :imageUrl)
+  end
+
   private
 
   def default_url_by_bullism
