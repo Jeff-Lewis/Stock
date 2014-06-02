@@ -73,14 +73,14 @@ class TweetsController < ApplicationController
     stockId = params[:stockId]
     date = params[:date]
     num = params[:num] || 30
-    getTweetsByStockHelper 'created_at > ? and stock_id = ?', stockId, date, num
+    getTweetsByStockHelper 'created_at > ? and stock_id = ?', stockId, DateTime.strptime(date, '%Y%m%d %H%M%S') + 1.second, num
   end
 
   def getPreviousTweetsByStock
     stockId = params[:stockId]
     date = params[:date]
     num = params[:num] || 30
-    getTweetsByStockHelper 'created_at < ? and stock_id = ?', stockId, date, num
+    getTweetsByStockHelper 'created_at < ? and stock_id = ?', stockId, DateTime.strptime(date, '%Y%m%d %H%M%S') - 1.second, num
   end
 
   def getTweetsByStockHelper query, stockId, date, num
@@ -94,7 +94,7 @@ class TweetsController < ApplicationController
 
     begin
       @tweets = Tweet.where(query,
-                            DateTime.strptime(date, '%Y%m%d %H%M%S'),
+                            date,
                             stockId).order('created_at desc').limit(num)
 
       @result = true
@@ -123,14 +123,14 @@ class TweetsController < ApplicationController
     erdateId = params[:erdateId]
     date = params[:date]
     num = params[:num] || 30
-    getTweetsByErHelper 'created_at > ? and erdate_id = ?', erdateId, date, num
+    getTweetsByErHelper 'created_at > ? and erdate_id = ?', erdateId, DateTime.strptime(date, '%Y%m%d %H%M%S').utc.iso8601 + 1.second, num
   end
 
   def getPreviousTweetsByEr
     erdateId = params[:erdateId]
     date = params[:date]
     num = params[:num] || 30
-    getTweetsByErHelper 'created_at < ? and erdate_id = ?', erdateId, date, num
+    getTweetsByErHelper 'created_at < ? and erdate_id = ?', erdateId, DateTime.strptime(date, '%Y%m%d %H%M%S').utc.iso8601 - 1.second, num
   end
 
   def getTweetsByErHelper query, erdateId, date, num
@@ -144,7 +144,7 @@ class TweetsController < ApplicationController
 
     begin
       @tweets = Tweet.where(query,
-                            DateTime.strptime(date, '%Y%m%d %H%M%S').utc.iso8601,
+                            date,
                             erdateId).order('created_at desc').limit(num)
 
       @result = true
